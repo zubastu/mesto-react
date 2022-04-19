@@ -7,7 +7,7 @@ import Main from './Main'
 function App() {
 
   return (
-    <div className="App">
+    <div className="page page_type_margin">
       <Header />
       <Main />
       <Footer />

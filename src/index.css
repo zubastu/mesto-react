@@ -42,7 +42,7 @@
 @import url(./blocks/header/__logo/header__logo.css);
 
 @import url(./blocks/form/form.css);
-@import url(./blocks/form/_type/form_type_avatar.css);
+@import url(blocks/form/_avatar/form_avatar.css);
 @import url(./blocks/form/__input-container/form__input-container.css);
 @import url(./blocks/form/__item/form__item.css);
 @import url(./blocks/form/__field/form__field.css);

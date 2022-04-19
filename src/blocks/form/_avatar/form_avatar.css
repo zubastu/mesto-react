@@ -1,4 +1,4 @@
-.form_type_avatar{
+.form_avatar{
     width: 430px;
     height: 272px;
     background-color: #FFFFFF;
@@ -13,7 +13,7 @@
 }
 
 @media screen and (max-width:500px) {
-    .form_type_avatar{
+    .form_avatar{
         width: 282px;
         height: 322px;
         margin-top: 122px;

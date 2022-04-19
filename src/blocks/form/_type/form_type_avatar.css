@@ -1,0 +1,21 @@
+.form_type_avatar{
+    width: 430px;
+    height: 272px;
+    background-color: #FFFFFF;
+    position: absolute;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 10px;
+    margin-top: 224px;
+}
+
+@media screen and (max-width:500px) {
+    .form_type_avatar{
+        width: 282px;
+        height: 322px;
+        margin-top: 122px;
+    }
+}

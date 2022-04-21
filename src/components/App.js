@@ -18,7 +18,7 @@ function App() {
     const handleOpenCard = () => setIsOpenCard(true)
 
     const handleOpenAvatar = () => setIsOpenAvatar(true)
-    const handleOpenAccept = () => setIsOpenAccept(true)
+
 
     const handleOpenCardImage = (card) => {
         setCard(card)

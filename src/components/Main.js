@@ -14,7 +14,7 @@ function Main({handleOpenProfile, handleOpenAvatar,handleOpenCard, handleOpenCar
         }).catch((err) => {
             console.log(err);
         });
-    })
+    }, [])
 
     return (
         <div className="main">

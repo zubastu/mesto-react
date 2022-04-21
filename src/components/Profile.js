@@ -15,7 +15,7 @@ function Profile(props) {
         }).catch((err) => {
             console.log(err);
         });
-    })
+    }, [])
 
     return (
         <>

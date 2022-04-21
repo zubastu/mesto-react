@@ -59,7 +59,7 @@ function App() {
             <label className="form__field">
                 <input type="text"
                        className="form__item form__item_input_name-profile input"
-                       value=""
+                       defaultValue =""
                        name="profileName"
                        id="name-input"
                        minLength="2"
@@ -72,7 +72,7 @@ function App() {
             <label className="form__field">
                 <input type="text"
                        className="form__item form__item_input_job-profile input"
-                       value=""
+                       defaultValue =""
                        name="profileJob"
                        id="job-input"
                        minLength="2"
@@ -97,7 +97,7 @@ function App() {
             <label className="form__field">
                 <input type="text"
                        className="form__item form__item_input_name-card input"
-                       value=""
+                       defaultValue =""
                        name="name"
                        id="cardName-input"
                        minLength="2"
@@ -110,7 +110,7 @@ function App() {
             <label className="form__field">
                 <input type="url"
                        className="form__item form__item_input_link-card input"
-                       value=""
+                       defaultValue =""
                        name="link"
                        id="cardUrl-input"
                        required
@@ -132,7 +132,7 @@ function App() {
             <label className="form__field">
                 <input type="url"
                        className="form__item form__item_input_link-avatar input"
-                       value=""
+                       defaultValue=""
                        name="avatar"
                        id="avatarURL-input"
                        required

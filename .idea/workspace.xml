@@ -4,18 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="effd79dd-f8f3-40af-a69e-0bd9e756e0f7" name="Changes" comment="разюил код на компоненты, добавил запрос к апи на получение информации о пользователе, настроил открытие/закрытие попапов">
-      <change afterPath="$PROJECT_DIR$/src/blocks/load-overlay/_active/load-overlay_active.css" afterDir="false" />
+    <list default="true" id="effd79dd-f8f3-40af-a69e-0bd9e756e0f7" name="Changes" comment="Доработал функционал согласно брифу">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/API.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/API.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Card.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Card.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/CardsContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CardsContainer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Client.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/Client.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Main.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/PopupWithImage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/PopupWithImage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Profile.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Profile.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/constants.js" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -78,7 +70,8 @@
       <updated>1650360942419</updated>
       <workItem from="1650360943889" duration="242000" />
       <workItem from="1650361260108" duration="34081000" />
-      <workItem from="1650557375386" duration="11293000" />
+      <workItem from="1650557375386" duration="11420000" />
+      <workItem from="1650568931032" duration="352000" />
     </task>
     <task id="LOCAL-00001" summary="Создал предварительную структуру">
       <created>1650371838498</created>
@@ -108,7 +101,14 @@
       <option name="project" value="LOCAL" />
       <updated>1650401396151</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Доработал функционал согласно брифу">
+      <created>1650568901111</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1650568901111</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -128,6 +128,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Создал предварительную структуру" />
     <MESSAGE value="разюил код на компоненты, добавил запрос к апи на получение информации о пользователе, настроил открытие/закрытие попапов" />
-    <option name="LAST_COMMIT_MESSAGE" value="разюил код на компоненты, добавил запрос к апи на получение информации о пользователе, настроил открытие/закрытие попапов" />
+    <MESSAGE value="Доработал функционал согласно брифу" />
+    <option name="LAST_COMMIT_MESSAGE" value="Доработал функционал согласно брифу" />
   </component>
 </project>

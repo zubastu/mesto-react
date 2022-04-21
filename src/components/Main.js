@@ -24,7 +24,7 @@ function Main({handleOpenProfile, handleOpenAvatar,handleOpenCard, handleOpenCar
                 handleOpenCard={handleOpenCard}
             />
             <CardsContainer>
-                {cards.map((card) => <Card card={card} handleOpenCardImage={handleOpenCardImage} />)}
+                {cards.map((card) => <Card key={card.id} card={card} handleOpenCardImage={handleOpenCardImage} />)}
             </CardsContainer>
         </div>
     )

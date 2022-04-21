@@ -2,10 +2,19 @@ import React from "react";
 import '../index.css'
 import Profile from "./Profile";
 import CardsContainer from "./CardsContainer";
+import {api} from "../utils/API";
+import Card from "./Card";
 
 
-
-function Main({handleOpenProfile, handleOpenAvatar,handleOpenCard}) {
+function Main({handleOpenProfile, handleOpenAvatar,handleOpenCard, handleOpenCardImage}) {
+    const [cards, setCards] = React.useState([])
+    React.useEffect(() => {
+        api.loadAllCards().then((cards) => {
+            setCards(cards)
+        }).catch((err) => {
+            console.log(err);
+        });
+    })
 
     return (
         <div className="main">
@@ -14,7 +23,9 @@ function Main({handleOpenProfile, handleOpenAvatar,handleOpenCard}) {
                 handleOpenAvatar={handleOpenAvatar}
                 handleOpenCard={handleOpenCard}
             />
-            <CardsContainer />
+            <CardsContainer>
+                {cards.map((card) => <Card card={card} handleOpenCardImage={handleOpenCardImage} />)}
+            </CardsContainer>
         </div>
     )
 }

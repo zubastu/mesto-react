@@ -9,11 +9,17 @@ import PopupWithImage from "./PopupWithImage";
 function App() {
     const [isOpenProfile, setIsOpenProfile] = React.useState(false);
     const [isOpenCard, setIsOpenCard] = React.useState(false);
+    const [isOpenCardImage, setIsOpenCardImage] = React.useState(false);
     const [isOpenAvatar, setIsOpenAvatar] = React.useState(false);
     const [isOpenAccept, setIsOpenAccept] = React.useState(false);
+    const [card, setCard] = React.useState({})
+
+    const {} = React.useState()
 
     const handleOpenProfile = () => setIsOpenProfile(true)
     const handleOpenCard = () => setIsOpenCard(true)
+
+
     const handleOpenAvatar = () => setIsOpenAvatar(true)
     const handleOpenAccept = () => setIsOpenAccept(true)
 
@@ -21,6 +27,12 @@ function App() {
     const handleClosePopupAvatar = () => setIsOpenAvatar(false)
     const handleClosePopupCard = () => setIsOpenCard(false)
     const handleClosePopupAccept = () => setIsOpenAccept(false)
+    const handleCloseCardImage = () => setIsOpenCardImage(false)
+
+    const handleOpenCardImage = (card) => {
+        setCard(card)
+        setIsOpenCardImage(true)
+    }
 
     return (
 
@@ -30,6 +42,7 @@ function App() {
           handleOpenProfile={handleOpenProfile}
           handleOpenCard={handleOpenCard}
           handleOpenAvatar={handleOpenAvatar}
+          handleOpenCardImage={handleOpenCardImage}
       />
       <Footer />
         <PopupWithForm
@@ -139,7 +152,14 @@ function App() {
             submit={'submit-btn_type_accept'}
             innerButtonText={'Да'}>
         </PopupWithForm>
-        <PopupWithImage />
+
+        <PopupWithImage
+            name={card.name}
+            link={card.link}
+            handleCloseCardImage={handleCloseCardImage}
+            isOpened={isOpenCardImage}
+            selector={"popup popup_photo"} />
+
     </div>
   );
 }

@@ -1,9 +1,6 @@
 import React from "react";
 import defaultAvatar from '../images/defaultAvatar.jpg';
-import API, {api} from "./API";
-
-
-
+import {api} from "../utils/API";
 
 function Profile(props) {
     const [avatar, setAvatar] = React.useState(defaultAvatar)

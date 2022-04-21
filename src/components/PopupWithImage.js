@@ -1,18 +1,19 @@
 import React from 'react';
 
-const PopupWithImage = () => {
+const PopupWithImage = (props) => {
+    const popupClassName = `${props.isOpened ? `${props.selector} popup_opened` : `${props.selector}`}`
     return (
-        <div className="popup popup_photo">
+        <div className={popupClassName}>
 
             <div className="popup__photo-container">
                 <button className="close-btn close-btn_photo "
-                        type="button"></button>
+                        type="button" onClick={props.handleCloseCardImage}></button>
 
-                <img src=".."
-                     alt=""
+                <img src={props.link}
+                     alt={props.name}
                      className="popup__photo-image" />
 
-                <p className="popup__photo-paragraph">Эта запись для теста</p>
+                <p className="popup__photo-paragraph">{props.name}</p>
             </div>
         </div>
     );

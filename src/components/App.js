@@ -4,7 +4,7 @@ import Footer from './Footer'
 import Header from './Header'
 import Main from './Main'
 import PopupWithForm from "./PopupWithForm";
-import PopupWithImage from "./PopupWithImage";
+import ImagePopup from "./ImagePopup";
 
 function App() {
     const [isOpenProfile, setIsOpenProfile] = React.useState(false);
@@ -14,24 +14,23 @@ function App() {
     const [isOpenAccept, setIsOpenAccept] = React.useState(false);
     const [card, setCard] = React.useState({})
 
-    const {} = React.useState()
-
     const handleOpenProfile = () => setIsOpenProfile(true)
     const handleOpenCard = () => setIsOpenCard(true)
-
 
     const handleOpenAvatar = () => setIsOpenAvatar(true)
     const handleOpenAccept = () => setIsOpenAccept(true)
 
-    const handleClosePopupProfile = () => setIsOpenProfile(false)
-    const handleClosePopupAvatar = () => setIsOpenAvatar(false)
-    const handleClosePopupCard = () => setIsOpenCard(false)
-    const handleClosePopupAccept = () => setIsOpenAccept(false)
-    const handleCloseCardImage = () => setIsOpenCardImage(false)
-
     const handleOpenCardImage = (card) => {
         setCard(card)
         setIsOpenCardImage(true)
+    }
+
+    const closeAllPopup = () => {
+        setIsOpenProfile(false)
+        setIsOpenCard(false)
+        setIsOpenCardImage(false)
+        setIsOpenAvatar(false)
+        setIsOpenAccept(false)
     }
 
     return (
@@ -46,7 +45,7 @@ function App() {
       />
       <Footer />
         <PopupWithForm
-            close={handleClosePopupProfile}
+            closeAllPopup={closeAllPopup}
             selector={'popup popup_profile'}
             heading={'popup-heading popup-heading_type_form'}
             isOpened={isOpenProfile}
@@ -85,7 +84,7 @@ function App() {
         </PopupWithForm>
 
         <PopupWithForm
-            close={handleClosePopupCard}
+            closeAllPopup={closeAllPopup}
             selector={'popup popup_card'}
             heading={'popup-heading popup-heading_type_form'}
             isOpened={isOpenCard}
@@ -120,7 +119,7 @@ function App() {
         </PopupWithForm>
 
         <PopupWithForm
-            close={handleClosePopupAvatar}
+            closeAllPopup={closeAllPopup}
             selector={'popup popup_avatar'}
             heading={'popup-heading popup-heading_type_form'}
             isOpened={isOpenAvatar}
@@ -142,7 +141,7 @@ function App() {
         </PopupWithForm>
 
         <PopupWithForm
-            close={handleClosePopupAccept}
+            closeAllPopup={closeAllPopup}
             selector={'popup popup_accept-delete-card'}
             heading={'popup-heading'}
             isOpened={false}
@@ -153,10 +152,9 @@ function App() {
             innerButtonText={'Да'}>
         </PopupWithForm>
 
-        <PopupWithImage
-            name={card.name}
-            link={card.link}
-            handleCloseCardImage={handleCloseCardImage}
+        <ImagePopup
+            selectedCard={card}
+            closeAllPopup={closeAllPopup}
             isOpened={isOpenCardImage}
             selector={"popup popup_photo"} />
 

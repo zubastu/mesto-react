@@ -11,7 +11,7 @@ const PopupWithForm = (props) => {
                   name={`${props.name}`}
                   noValidate>
                 <button type="button"
-                        className="close-btn close-btn_profile" onClick={props.close}></button>
+                        className="close-btn close-btn_profile" onClick={props.closeAllPopup}></button>
 
                 <h2 className={props.heading}>{props.title}</h2>
 

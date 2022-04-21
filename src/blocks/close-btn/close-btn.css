@@ -20,9 +20,6 @@
     }
 }
 
-
-
-
 .close-btn{
     padding: 0;
     border: none;
@@ -40,5 +37,5 @@
 }
 
 .close-btn:hover {
-    animation: rotate ease-in 3s ;
+    animation: rotate ease-in 3s;
 }

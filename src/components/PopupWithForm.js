@@ -9,6 +9,7 @@ const PopupWithForm = (props) => {
             <form className={`${props.formName}`}
                   id={`${props.name}__form`}
                   name={`${props.name}`}
+                  onSubmit={props.onSubmit}
                   noValidate>
                 <button type="button"
                         className="close-btn close-btn_profile" onClick={props.closeAllPopup}></button>
@@ -18,6 +19,7 @@ const PopupWithForm = (props) => {
                 <fieldset className="form__input-container input">
                     {props.children}
                     <button type="submit"
+
                             className={`submit-btn submit-btn_${props.name} ${props.submit} button`}>{props.innerButtonText}
                     </button>
                 </fieldset>

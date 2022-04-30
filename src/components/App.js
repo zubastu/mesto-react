@@ -5,6 +5,9 @@ import Header from './Header'
 import Main from './Main'
 import PopupWithForm from "./PopupWithForm";
 import ImagePopup from "./ImagePopup";
+import {api} from "../utils/API";
+import {CurrentUserContext} from "../contexts/CurrentUserContext";
+import EditProfilePopup from "./EditProfilePopup";
 
 function App() {
     const [isOpenProfile, setIsOpenProfile] = React.useState(false);
@@ -14,11 +17,31 @@ function App() {
     const [isOpenAccept, setIsOpenAccept] = React.useState(false);
     const [card, setCard] = React.useState({})
 
+    const [currentUser, setCurrentUser] = React.useState({})
+
+    React.useEffect(() => {
+        api.getUserInfo().then((data) => {
+            setCurrentUser(data)
+        }).catch((err) => {
+            console.log(err);
+        });
+    }, [])
+
+    function handleUpdateUser(props) {
+        console.log(props)
+        api.setUserInfo(props).then((data) => {
+            console.log(data)
+            setCurrentUser(data)
+            closeAllPopup()
+        })
+    }
+
+
+
     const handleOpenProfile = () => setIsOpenProfile(true)
     const handleOpenCard = () => setIsOpenCard(true)
 
     const handleOpenAvatar = () => setIsOpenAvatar(true)
-
 
     const handleOpenCardImage = (card) => {
         setCard(card)
@@ -33,55 +56,23 @@ function App() {
         setIsOpenAccept(false)
     }
 
+
+
     return (
 
     <div className="page page_type_margin">
       <Header />
-      <Main
-          handleOpenProfile={handleOpenProfile}
-          handleOpenCard={handleOpenCard}
-          handleOpenAvatar={handleOpenAvatar}
-          handleOpenCardImage={handleOpenCardImage}
-      />
+        <CurrentUserContext.Provider value={currentUser}>
+          <Main
+              handleOpenProfile={handleOpenProfile}
+              handleOpenCard={handleOpenCard}
+              handleOpenAvatar={handleOpenAvatar}
+              handleOpenCardImage={handleOpenCardImage}
+          />
+            <EditProfilePopup onUpdateUser={handleUpdateUser} onClose={closeAllPopup} isOpened={isOpenProfile} />
+        </CurrentUserContext.Provider>
+
       <Footer />
-        <PopupWithForm
-            closeAllPopup={closeAllPopup}
-            selector={'popup popup_profile'}
-            heading={'popup-heading popup-heading_type_form'}
-            isOpened={isOpenProfile}
-            formName={'form form_profile'}
-            name={'profile'}
-            title={'Редактировать профиль'}
-            submit={'submit-btn_type_form'}
-            innerButtonText={'Сохранить'}>
-
-            <label className="form__field">
-                <input type="text"
-                       className="form__item form__item_input_name-profile input"
-                       defaultValue =""
-                       name="profileName"
-                       id="name-input"
-                       minLength="2"
-                       maxLength="40"
-                       required
-                       placeholder="Имя профиля" />
-                <span className="form__input-error name-input-error"></span>
-            </label>
-
-            <label className="form__field">
-                <input type="text"
-                       className="form__item form__item_input_job-profile input"
-                       defaultValue =""
-                       name="profileJob"
-                       id="job-input"
-                       minLength="2"
-                       maxLength="200"
-                       required
-                       placeholder="Деятельность" />
-                <span className="form__input-error job-input-error"></span>
-            </label>
-
-        </PopupWithForm>
 
         <PopupWithForm
             closeAllPopup={closeAllPopup}

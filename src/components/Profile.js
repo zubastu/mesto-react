@@ -1,24 +1,11 @@
-import React from "react";
-import defaultAvatar from '../images/defaultAvatar.jpg';
-import {api} from "../utils/API";
+import React, {useContext} from "react";
+import {CurrentUserContext} from "../contexts/CurrentUserContext";
+
 
 function Profile(props) {
-    const [avatar, setAvatar] = React.useState(defaultAvatar)
-    const [name, setName] = React.useState('Жак-ив')
-    const [about, setAbout] = React.useState('Кусто')
-
-    React.useEffect(() => {
-        api.getUserInfo().then((data) => {
-            setAvatar(data.avatar)
-            setName(data.name)
-            setAbout(data.about)
-        }).catch((err) => {
-            console.log(err);
-        });
-    }, [])
+    const {avatar, name, about} = useContext(CurrentUserContext)
 
     return (
-        <>
             <div className="profile margin center">
                     <span className="profile__hover" onClick={props.handleOpenAvatar}>
                         <img src={avatar} alt="Фото Профиля" className="profile__avatar-image" />
@@ -37,7 +24,6 @@ function Profile(props) {
                         className="profile__add-btn button" onClick={props.handleOpenCard}></button>
 
             </div>
-        </>
     )
 }
 

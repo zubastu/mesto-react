@@ -5,7 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="effd79dd-f8f3-40af-a69e-0bd9e756e0f7" name="Changes" comment="Исправил замечания первой итерации ревью">
+      <change afterPath="$PROJECT_DIR$/src/components/EditProfilePopup.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/contexts/CurrentUserContext.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Card.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Card.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Main.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/PopupWithForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/PopupWithForm.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Profile.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Profile.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/API.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/API.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -15,8 +23,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="JavaScript File" />
         <option value="CSS File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -36,7 +44,7 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/Projects/mesto-react/src&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/Projects/mesto-react&quot;,
     &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
@@ -71,6 +79,15 @@
       <workItem from="1650557375386" duration="11420000" />
       <workItem from="1650568931032" duration="1835000" />
       <workItem from="1650571812486" duration="2062000" />
+      <workItem from="1650647576243" duration="7657000" />
+      <workItem from="1650715630646" duration="483000" />
+      <workItem from="1650881858799" duration="1996000" />
+      <workItem from="1650885442395" duration="201000" />
+      <workItem from="1650886258262" duration="1193000" />
+      <workItem from="1651001910325" duration="902000" />
+      <workItem from="1651080126316" duration="607000" />
+      <workItem from="1651251644204" duration="25000" />
+      <workItem from="1651301788618" duration="34933000" />
     </task>
     <task id="LOCAL-00001" summary="Создал предварительную структуру">
       <created>1650371838498</created>

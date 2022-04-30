@@ -46,6 +46,14 @@ export default class API {
         return this._client.delete(`cards/${id}/likes`);
     };
 
+    changeLikeCardStatus(id, isLiked) {
+        if (!isLiked) {
+            return this._client.put(`cards/${id}/likes`);
+        } else {
+            return this._client.delete(`cards/${id}/likes`);
+        }
+    }
+
 }
 
 const client = new Client('https://mesto.nomoreparties.co/v1/cohort-38', {

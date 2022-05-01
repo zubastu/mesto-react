@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="effd79dd-f8f3-40af-a69e-0bd9e756e0f7" name="Changes" comment="Исправил замечание: Отценртрировал попапы">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/Client.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/Client.js" afterDir="false" />
+    <list default="true" id="effd79dd-f8f3-40af-a69e-0bd9e756e0f7" name="Changes" comment="Исправил замечание: Изменил названия api в нижний регистр">
+      <change beforePath="$PROJECT_DIR$/src/components/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/App.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -83,7 +82,7 @@
       <workItem from="1651251644204" duration="25000" />
       <workItem from="1651301788618" duration="34933000" />
       <workItem from="1651391388832" duration="5482000" />
-      <workItem from="1651404607474" duration="10754000" />
+      <workItem from="1651404607474" duration="10967000" />
     </task>
     <task id="LOCAL-00001" summary="Создал предварительную структуру">
       <created>1650371838498</created>
@@ -169,7 +168,21 @@
       <option name="project" value="LOCAL" />
       <updated>1651425177548</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Исправил замечание: Удалил лишний then">
+      <created>1651425386287</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1651425386287</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Исправил замечание: Изменил названия api в нижний регистр">
+      <created>1651425466263</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1651425466263</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -194,6 +207,8 @@
     <MESSAGE value="Добавил изменение аватара" />
     <MESSAGE value="Добавил подтверждение удавления, эффекты при загрузках, доделал работу, сдаю на проверку" />
     <MESSAGE value="Исправил замечание: Отценртрировал попапы" />
-    <option name="LAST_COMMIT_MESSAGE" value="Исправил замечание: Отценртрировал попапы" />
+    <MESSAGE value="Исправил замечание: Удалил лишний then" />
+    <MESSAGE value="Исправил замечание: Изменил названия api в нижний регистр" />
+    <option name="LAST_COMMIT_MESSAGE" value="Исправил замечание: Изменил названия api в нижний регистр" />
   </component>
 </project>

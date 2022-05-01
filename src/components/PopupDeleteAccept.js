@@ -1,7 +1,12 @@
 import React from "react";
 import PopupWithForm from "./PopupWithForm";
 
-const PopupDeleteAccept = ({isOpened,onAcceptClick, isUploading, onClose}) => {
+const PopupDeleteAccept = ({
+  isOpened,
+  onAcceptClick,
+  isUploading,
+  onClose,
+}) => {
   return (
     <PopupWithForm
       isUploading={isUploading}

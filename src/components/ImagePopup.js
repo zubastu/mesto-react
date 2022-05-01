@@ -1,6 +1,6 @@
 import React from "react";
 
-const ImagePopup = ({selector, isOpened, closeAllPopup, selectedCard}) => {
+const ImagePopup = ({ selector, isOpened, closeAllPopup, selectedCard }) => {
   const popupClassName = `${
     isOpened ? `${selector} popup_opened` : `${selector}`
   }`;

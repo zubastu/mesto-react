@@ -1,7 +1,12 @@
 import React from "react";
 import PopupWithForm from "./PopupWithForm";
 
-const EditAvatarPopup = ({onUpdateAvatar, isOpened, isUploading, onClose}) => {
+const EditAvatarPopup = ({
+  onUpdateAvatar,
+  isOpened,
+  isUploading,
+  onClose,
+}) => {
   const ref = React.useRef();
   function handleSubmit(e) {
     e.preventDefault();

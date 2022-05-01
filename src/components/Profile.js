@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import { CurrentUserContext } from "../contexts/CurrentUserContext";
 import defaultAvatar from "../images/defaultAvatar.jpg";
 
-function Profile({handleOpenAvatar, handleOpenCard, handleOpenProfile}) {
+function Profile({ handleOpenAvatar, handleOpenCard, handleOpenProfile }) {
   const { avatar, name, about } = useContext(CurrentUserContext);
 
   return (

@@ -1,7 +1,7 @@
 import React from "react";
 import { CurrentUserContext } from "../contexts/CurrentUserContext";
 
-const Card = ({card, onCardDelete, handleOpenCardImage, onCardLike}) => {
+const Card = ({ card, onCardDelete, handleOpenCardImage, onCardLike }) => {
   const checkLike = () => {
     return card.likes.some(function (id) {
       return userInfo._id === id._id;

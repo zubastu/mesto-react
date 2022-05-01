@@ -4,11 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="effd79dd-f8f3-40af-a69e-0bd9e756e0f7" name="Changes" comment="Добавил подтверждение удавления, эффекты при загрузках, доделал работу, сдаю на проверку">
+    <list default="true" id="effd79dd-f8f3-40af-a69e-0bd9e756e0f7" name="Changes" comment="Исправил замечание: Отценртрировал попапы">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/blocks/form/_avatar/form_avatar.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/blocks/form/_avatar/form_avatar.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/blocks/form/form.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/blocks/form/form.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/blocks/popup/popup.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/blocks/popup/popup.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/Client.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/Client.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -85,7 +83,7 @@
       <workItem from="1651251644204" duration="25000" />
       <workItem from="1651301788618" duration="34933000" />
       <workItem from="1651391388832" duration="5482000" />
-      <workItem from="1651404607474" duration="10496000" />
+      <workItem from="1651404607474" duration="10754000" />
     </task>
     <task id="LOCAL-00001" summary="Создал предварительную структуру">
       <created>1650371838498</created>
@@ -164,7 +162,14 @@
       <option name="project" value="LOCAL" />
       <updated>1651414023654</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Исправил замечание: Отценртрировал попапы">
+      <created>1651425177548</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1651425177548</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -188,6 +193,7 @@
     <MESSAGE value="Исправил замечания первой итерации ревью" />
     <MESSAGE value="Добавил изменение аватара" />
     <MESSAGE value="Добавил подтверждение удавления, эффекты при загрузках, доделал работу, сдаю на проверку" />
-    <option name="LAST_COMMIT_MESSAGE" value="Добавил подтверждение удавления, эффекты при загрузках, доделал работу, сдаю на проверку" />
+    <MESSAGE value="Исправил замечание: Отценртрировал попапы" />
+    <option name="LAST_COMMIT_MESSAGE" value="Исправил замечание: Отценртрировал попапы" />
   </component>
 </project>

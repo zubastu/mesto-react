@@ -12,6 +12,7 @@ const PopupWithForm = ({
   selector,
   submit,
   title,
+  children,
 }) => {
   const popupClassName = `${
     isOpened ? `${selector} popup_opened` : `${selector}`

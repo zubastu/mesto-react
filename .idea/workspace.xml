@@ -4,17 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="effd79dd-f8f3-40af-a69e-0bd9e756e0f7" name="Changes" comment="Исправил замечание: Исправил замечание по форматированию">
+    <list default="true" id="effd79dd-f8f3-40af-a69e-0bd9e756e0f7" name="Changes" comment="Исправил замечание: добавил деструктуризацию">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/AddPlacePopup.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/AddPlacePopup.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Card.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Card.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/CardsContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CardsContainer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/EditAvatarPopup.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/EditAvatarPopup.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/EditProfilePopup.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/EditProfilePopup.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ImagePopup.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ImagePopup.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/PopupDeleteAccept.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/PopupDeleteAccept.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/PopupWithForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/PopupWithForm.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Profile.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Profile.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -93,7 +85,7 @@
       <workItem from="1651251644204" duration="25000" />
       <workItem from="1651301788618" duration="34933000" />
       <workItem from="1651391388832" duration="5482000" />
-      <workItem from="1651404607474" duration="15294000" />
+      <workItem from="1651404607474" duration="15347000" />
     </task>
     <task id="LOCAL-00001" summary="Создал предварительную структуру">
       <created>1650371838498</created>
@@ -242,7 +234,14 @@
       <option name="project" value="LOCAL" />
       <updated>1651429037422</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="Исправил замечание: добавил деструктуризацию">
+      <created>1651429971610</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1651429971610</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -274,6 +273,7 @@
     <MESSAGE value="Исправил замечание: исправил отступы в CardsContainer" />
     <MESSAGE value="Исправил замечание: исправил отступы Main" />
     <MESSAGE value="Исправил замечание: Исправил замечание по форматированию" />
-    <option name="LAST_COMMIT_MESSAGE" value="Исправил замечание: Исправил замечание по форматированию" />
+    <MESSAGE value="Исправил замечание: добавил деструктуризацию" />
+    <option name="LAST_COMMIT_MESSAGE" value="Исправил замечание: добавил деструктуризацию" />
   </component>
 </project>

@@ -1,12 +1,3 @@
-.load-overlay{
-    max-height: 150px;
-    margin: 50px 0 0 0;
-    align-self: center;
-    justify-self: center;
-    display: none;
-    animation: rotateLoad infinite 1.7s;
-}
-
 @keyframes rotateLoad {
     0% {
         transform: rotate(-0deg) scale(1.5);
@@ -15,3 +6,13 @@
         transform: rotate(-360deg) scale(1);
     }
 }
+
+.load-overlay{
+    height: 150px;
+    margin: 50px 0 0 0;
+    align-self: center;
+    justify-self: center;
+    display: block;
+    animation: rotateLoad infinite 1.7s;
+}
+

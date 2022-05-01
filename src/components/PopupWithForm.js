@@ -19,8 +19,7 @@ const PopupWithForm = (props) => {
                 <fieldset className="form__input-container input">
                     {props.children}
                     <button type="submit"
-
-                            className={`submit-btn submit-btn_${props.name} ${props.submit} button`}>{props.innerButtonText}
+                            className={`submit-btn submit-btn_${props.name} ${props.submit} button`}>{props.isUploading ? 'Выполнение...' : props.innerButtonText}
                     </button>
                 </fieldset>
             </form>

@@ -8,10 +8,12 @@ const EditAvatarPopup = (props) => {
         props.onUpdateAvatar({
             avatar: ref.current.value
         })
+        ref.current.value = ''
     }
     return (
             <PopupWithForm
-                closeAllPopup={props.closeAllPopup}
+                isUploading={props.isUploading}
+                closeAllPopup={props.onClose}
                 selector={'popup popup_avatar'}
                 heading={'popup-heading popup-heading_type_form'}
                 isOpened={props.isOpened}

@@ -9,7 +9,7 @@ const EditProfilePopup = (props) => {
     React.useEffect(() => {
         setName(userInfo.name)
         setAbout(userInfo.about)
-    }, [userInfo])
+    }, [userInfo, props.isOpened])
 
     function handleChangeName(e) {
         setName(e.target.value);
@@ -30,6 +30,7 @@ const EditProfilePopup = (props) => {
         <div>
             <PopupWithForm
                 onSubmit={handleSubmit}
+                isUploading={props.isUploading}
                 closeAllPopup={props.onClose}
                 selector={'popup popup_profile'}
                 heading={'popup-heading popup-heading_type_form'}

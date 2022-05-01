@@ -1,6 +1,7 @@
 import React from 'react';
 import {CurrentUserContext} from "../contexts/CurrentUserContext";
 
+
 const Card = (props) => {
     const checkLike = () => {
         return props.card.likes.some(function (id) {
@@ -26,7 +27,7 @@ const Card = (props) => {
                     <p className="card__text">{props.card.name}</p>
                     <div className="card__like-section">
                         <button
-                            onClick={() => props.onCardLike(props.card)}
+                            onClick={() => props.onCardLike(props.card, userInfo._id)}
                             type="button"
                             className={likeButtonClass}></button>
                         <span className={props.card.likes.length > 0 ? "card__like-counter" : "card__like-counter_disabled"}>{props.card.likes.length}</span>

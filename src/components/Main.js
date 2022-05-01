@@ -13,13 +13,14 @@ function Main({handleOpenProfile, handleOpenAvatar,handleOpenCard, handleOpenCar
                 handleOpenAvatar={handleOpenAvatar}
                 handleOpenCard={handleOpenCard}
             />
-            <CardsContainer isLoadingCards={isLoadingCards} >
 
-                {cards.map((card) => <Card key={card._id}
-                                           card={card}
-                                           onCardDelete={openAcceptDeletePopup}
-                                           onCardLike={handleCardLike}
-                                           handleOpenCardImage={handleOpenCardImage}/>)
+            <CardsContainer isLoadingCards={isLoadingCards} >
+                {cards.map((card) =>
+                    <Card key={card._id}
+                          card={card}
+                          onCardDelete={openAcceptDeletePopup}
+                          onCardLike={handleCardLike}
+                          handleOpenCardImage={handleOpenCardImage}/>)
                 }
             </CardsContainer>
         </div>

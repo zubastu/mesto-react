@@ -2,14 +2,14 @@ import React from "react";
 import PopupWithForm from "./PopupWithForm";
 import { CurrentUserContext } from "../contexts/CurrentUserContext";
 
-const EditProfilePopup = (props) => {
+const EditProfilePopup = ({isOpened, onClose, isUploading, onUpdateUser}) => {
   const [name, setName] = React.useState("");
   const [about, setAbout] = React.useState("");
   const userInfo = React.useContext(CurrentUserContext);
   React.useEffect(() => {
     setName(userInfo.name);
     setAbout(userInfo.about);
-  }, [userInfo, props.isOpened]);
+  }, [userInfo, isOpened]);
 
   function handleChangeName(e) {
     setName(e.target.value);
@@ -20,7 +20,7 @@ const EditProfilePopup = (props) => {
 
   function handleSubmit(e) {
     e.preventDefault();
-    props.onUpdateUser({
+    onUpdateUser({
       name: name,
       about: about,
     });
@@ -30,16 +30,16 @@ const EditProfilePopup = (props) => {
     <div>
       <PopupWithForm
         onSubmit={handleSubmit}
-        isUploading={props.isUploading}
-        closeAllPopup={props.onClose}
-        selector={"popup popup_profile"}
-        heading={"popup-heading popup-heading_type_form"}
-        isOpened={props.isOpened}
-        formName={"form form_profile"}
-        name={"profile"}
-        title={"Редактировать профиль"}
-        submit={"submit-btn_type_form"}
-        innerButtonText={"Сохранить"}
+        isUploading={isUploading}
+        closeAllPopup={onClose}
+        selector="popup popup_profile"
+        heading="popup-heading popup-heading_type_form"
+        isOpened={isOpened}
+        formName="form form_profile"
+        name="profile"
+        title="Редактировать профиль"
+        submit="submit-btn_type_form"
+        innerButtonText="Сохранить"
       >
         <label className="form__field">
           <input

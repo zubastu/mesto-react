@@ -1,8 +1,8 @@
 import React from "react";
 
-const ImagePopup = (props) => {
+const ImagePopup = ({selector, isOpened, closeAllPopup, selectedCard}) => {
   const popupClassName = `${
-    props.isOpened ? `${props.selector} popup_opened` : `${props.selector}`
+    isOpened ? `${selector} popup_opened` : `${selector}`
   }`;
   return (
     <div className={popupClassName}>
@@ -10,16 +10,16 @@ const ImagePopup = (props) => {
         <button
           className="close-btn close-btn_photo "
           type="button"
-          onClick={props.closeAllPopup}
+          onClick={closeAllPopup}
         ></button>
 
         <img
-          src={props.selectedCard.link}
-          alt={props.selectedCard.name}
+          src={selectedCard.link}
+          alt={selectedCard.name}
           className="popup__photo-image"
         />
 
-        <p className="popup__photo-paragraph">{props.selectedCard.name}</p>
+        <p className="popup__photo-paragraph">{selectedCard.name}</p>
       </div>
     </div>
   );

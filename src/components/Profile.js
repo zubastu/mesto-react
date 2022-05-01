@@ -2,12 +2,12 @@ import React, { useContext } from "react";
 import { CurrentUserContext } from "../contexts/CurrentUserContext";
 import defaultAvatar from "../images/defaultAvatar.jpg";
 
-function Profile(props) {
+function Profile({handleOpenAvatar, handleOpenCard, handleOpenProfile}) {
   const { avatar, name, about } = useContext(CurrentUserContext);
 
   return (
     <div className="profile margin center">
-      <span className="profile__hover" onClick={props.handleOpenAvatar}>
+      <span className="profile__hover" onClick={handleOpenAvatar}>
         <img
           src={avatar || defaultAvatar}
           alt="Фото Профиля"
@@ -22,7 +22,7 @@ function Profile(props) {
           <button
             type="button"
             className="profile__info-btn button"
-            onClick={props.handleOpenProfile}
+            onClick={handleOpenProfile}
           ></button>
         </div>
       </div>
@@ -30,7 +30,7 @@ function Profile(props) {
       <button
         type="button"
         className="profile__add-btn button"
-        onClick={props.handleOpenCard}
+        onClick={handleOpenCard}
       ></button>
     </div>
   );

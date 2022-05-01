@@ -1,7 +1,7 @@
 import React from "react";
 import PopupWithForm from "./PopupWithForm";
 
-const AddPlacePopup = (props) => {
+const AddPlacePopup = ({onAddCard, onClose, isOpened, isUploading}) => {
   const [cardName, setCardName] = React.useState("");
   const [cardLink, setCardLink] = React.useState("");
 
@@ -14,7 +14,7 @@ const AddPlacePopup = (props) => {
 
   function handleSubmit(e) {
     e.preventDefault();
-    props.onAddCard({
+    onAddCard({
       name: cardName,
       link: cardLink,
     });
@@ -24,11 +24,11 @@ const AddPlacePopup = (props) => {
 
   return (
     <PopupWithForm
-      isUploading={props.isUploading}
-      closeAllPopup={props.onClose}
+      isUploading={isUploading}
+      closeAllPopup={onClose}
       selector={"popup popup_card"}
       heading={"popup-heading popup-heading_type_form"}
-      isOpened={props.isOpened}
+      isOpened={isOpened}
       formName={"form form_card"}
       name={"card"}
       title={"Новое место"}

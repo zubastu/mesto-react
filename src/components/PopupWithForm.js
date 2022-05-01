@@ -1,34 +1,46 @@
 import React from "react";
 
-const PopupWithForm = (props) => {
+const PopupWithForm = ({
+  innerButtonText,
+  closeAllPopup,
+  formName,
+  heading,
+  isOpened,
+  isUploading,
+  name,
+  onSubmit,
+  selector,
+  submit,
+  title,
+}) => {
   const popupClassName = `${
-    props.isOpened ? `${props.selector} popup_opened` : `${props.selector}`
+    isOpened ? `${selector} popup_opened` : `${selector}`
   }`;
 
   return (
     <div className={popupClassName}>
       <form
-        className={`${props.formName}`}
-        id={`${props.name}__form`}
-        name={`${props.name}`}
-        onSubmit={props.onSubmit}
+        className={`${formName}`}
+        id={`${name}__form`}
+        name={`${name}`}
+        onSubmit={onSubmit}
         noValidate
       >
         <button
           type="button"
           className="close-btn close-btn_profile"
-          onClick={props.closeAllPopup}
+          onClick={closeAllPopup}
         ></button>
 
-        <h2 className={props.heading}>{props.title}</h2>
+        <h2 className={heading}>{title}</h2>
 
         <fieldset className="form__input-container input">
-          {props.children}
+          {children}
           <button
             type="submit"
-            className={`submit-btn submit-btn_${props.name} ${props.submit} button`}
+            className={`submit-btn submit-btn_${name} ${submit} button`}
           >
-            {props.isUploading ? "Выполнение..." : props.innerButtonText}
+            {isUploading ? "Выполнение..." : innerButtonText}
           </button>
         </fieldset>
       </form>

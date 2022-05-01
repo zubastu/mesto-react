@@ -1,19 +1,19 @@
 import React from "react";
 import PopupWithForm from "./PopupWithForm";
 
-const PopupDeleteAccept = (props) => {
+const PopupDeleteAccept = ({isOpened,onAcceptClick, isUploading, onClose}) => {
   return (
     <PopupWithForm
-      isUploading={props.isUploading}
-      closeAllPopup={props.closeAllPopup}
+      isUploading={isUploading}
+      closeAllPopup={onClose}
       selector="popup popup_accept-delete-card"
       heading="popup-heading"
-      isOpened={props.isOpened}
+      isOpened={isOpened}
       formName="delete-container"
       name="accept-delete-card"
       title="Вы уверены?"
       submit="submit-btn_type_accept"
-      onSubmit={props.onAcceptClick}
+      onSubmit={onAcceptClick}
       innerButtonText="Да"
     ></PopupWithForm>
   );

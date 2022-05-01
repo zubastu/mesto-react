@@ -10,7 +10,9 @@ import EditAvatarPopup from "./EditAvatarPopup";
 import AddPlacePopup from "./AddPlacePopup";
 import PopupDeleteAccept from "./PopupDeleteAccept";
 
+
 function App() {
+
   const [isOpenProfile, setIsOpenProfile] = React.useState(false);
   const [isOpenCard, setIsOpenCard] = React.useState(false);
   const [isOpenCardImage, setIsOpenCardImage] = React.useState(false);

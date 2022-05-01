@@ -25,22 +25,25 @@ function App() {
 
     React.useEffect(() => {
         setIsLoadingCards(true)
-        api.loadAllCards().then((cards) => {
-            const reverseCards = []
-            cards.forEach(card => reverseCards.push(card))
-            setCards(reverseCards)
-        }).catch((err) => {
-            console.log(err);
-        }).finally(() => {
-            setIsLoadingCards(false)
-        })
-    }, [])
-
+        Promise.all([
+            api.getUserInfo(),
+            api.loadAllCards()
+        ]).then(([userData, cardsData]) => {
+                setCurrentUser(userData)
+                setCards(cardsData)
+            }).catch((err) => {
+                console.log(err);
+            }).finally(() => {
+                setIsLoadingCards(false)
+            })
+        }, [])
 
     function handleCardLike(card, userId) {
         const isLiked = card.likes.some((i) => i._id === userId );
         api.changeLikeCardStatus(card._id, isLiked).then((newCard) => {
             setCards((state) => state.map((c) => c._id === card._id ? newCard : c));
+        }).catch((err) => {
+            console.log(err);
         });
     }
 
@@ -56,13 +59,6 @@ function App() {
         })
     }
 
-    React.useEffect(() => {
-        api.getUserInfo().then((data) => {
-            setCurrentUser(data)
-        }).catch((err) => {
-            console.log(err);
-        })
-    }, [])
 
     function handleUpdateUser(props) {
         setIsUploading(true)
@@ -95,6 +91,7 @@ function App() {
         setCard(card)
         setIsOpenCardImage(true)
     }
+
     const closeAllPopup = () => {
         setIsOpenProfile(false)
         setIsOpenCard(false)
@@ -147,8 +144,6 @@ function App() {
             </CurrentUserContext.Provider>
 
           <Footer />
-
-
 
             <ImagePopup
                 selectedCard={card}

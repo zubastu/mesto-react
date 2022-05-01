@@ -4,7 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="effd79dd-f8f3-40af-a69e-0bd9e756e0f7" name="Changes" comment="Исправил замечание: Изменил названия api в нижний регистр">
+    <list default="true" id="effd79dd-f8f3-40af-a69e-0bd9e756e0f7" name="Changes" comment="Исправил замечание: убрал импортирование стилей в Апп">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/App.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -82,7 +83,7 @@
       <workItem from="1651251644204" duration="25000" />
       <workItem from="1651301788618" duration="34933000" />
       <workItem from="1651391388832" duration="5482000" />
-      <workItem from="1651404607474" duration="10967000" />
+      <workItem from="1651404607474" duration="12091000" />
     </task>
     <task id="LOCAL-00001" summary="Создал предварительную структуру">
       <created>1650371838498</created>
@@ -182,7 +183,14 @@
       <option name="project" value="LOCAL" />
       <updated>1651425466263</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Исправил замечание: убрал импортирование стилей в Апп">
+      <created>1651425623022</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1651425623022</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -209,6 +217,7 @@
     <MESSAGE value="Исправил замечание: Отценртрировал попапы" />
     <MESSAGE value="Исправил замечание: Удалил лишний then" />
     <MESSAGE value="Исправил замечание: Изменил названия api в нижний регистр" />
-    <option name="LAST_COMMIT_MESSAGE" value="Исправил замечание: Изменил названия api в нижний регистр" />
+    <MESSAGE value="Исправил замечание: убрал импортирование стилей в Апп" />
+    <option name="LAST_COMMIT_MESSAGE" value="Исправил замечание: убрал импортирование стилей в Апп" />
   </component>
 </project>

@@ -1,6 +1,6 @@
-import Client from "./Client";
+import Client from "./client";
 
-export default class API {
+export default class Api {
     constructor(client) {
         this._client = client;
     };
@@ -63,4 +63,4 @@ const client = new Client('https://mesto.nomoreparties.co/v1/cohort-38', {
 });
 
 
-export const api = new API(client);
+export const api = new Api(client);

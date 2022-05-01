@@ -23,7 +23,6 @@
 @import url(./blocks/submit-btn/_type/submit-btn_type_accept.css);
 @import url(./blocks/submit-btn/_type/submit-btn_type_form.css);
 
-
 @import url(./blocks/card/__like/card__like.css);
 @import url(./blocks/card/__like/_active/card__like_active.css);
 
@@ -81,5 +80,3 @@
 
 @import url(./blocks/footer/footer.css);
 @import url(./blocks/footer/__copyright/footer__copyright.css);
-
-

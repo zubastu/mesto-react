@@ -4,7 +4,7 @@ export default class Client {
     this._headers = headers;
   }
 
-  _renderPromise(promise) {
+  _checkPromise(promise) {
     return promise.then((res) => {
       if (res.ok) {
         return res.json();
@@ -18,7 +18,7 @@ export default class Client {
       method: "GET",
       headers: this._headers,
     });
-    return this._renderPromise(promise);
+    return this._checkPromise(promise);
   }
 
   post(type, item) {
@@ -31,7 +31,7 @@ export default class Client {
         image: item.image,
       }),
     });
-    return this._renderPromise(promise);
+    return this._checkPromise(promise);
   }
 
   patch(type, keys) {
@@ -40,7 +40,7 @@ export default class Client {
       headers: this._headers,
       body: JSON.stringify(keys),
     });
-    return this._renderPromise(promise);
+    return this._checkPromise(promise);
   }
 
   delete(type) {
@@ -48,7 +48,7 @@ export default class Client {
       method: "DELETE",
       headers: this._headers,
     });
-    return this._renderPromise(promise);
+    return this._checkPromise(promise);
   }
 
   put(type) {
@@ -56,6 +56,6 @@ export default class Client {
       method: "PUT",
       headers: this._headers,
     });
-    return this._renderPromise(promise);
+    return this._checkPromise(promise);
   }
 }

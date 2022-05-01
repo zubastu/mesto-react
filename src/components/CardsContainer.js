@@ -4,10 +4,7 @@ import loadOverlay from "../images/loading.svg";
 const CardsContainer = (props) => {
     return (
         <div id="cards-container" className="photo-cards center">
-                {props.isLoadingCards ?
-                    (<img className="load-overlay" src={loadOverlay} alt={'загрузка'} />)
-                    :
-                    props.children}
+            {props.isLoadingCards ? (<img className="load-overlay" src={loadOverlay} alt={'загрузка'} />) : props.children}
         </div>
     );
 };

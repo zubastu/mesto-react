@@ -8,6 +8,7 @@ import ImagePopup from "./ImagePopup";
 import {api} from "../utils/API";
 import {CurrentUserContext} from "../contexts/CurrentUserContext";
 import EditProfilePopup from "./EditProfilePopup";
+import EditAvatarPopup from "./EditAvatarPopup";
 
 function App() {
     const [isOpenProfile, setIsOpenProfile] = React.useState(false);
@@ -28,7 +29,6 @@ function App() {
     }, [])
 
     function handleUpdateUser(props) {
-        console.log(props)
         api.setUserInfo(props).then((data) => {
             console.log(data)
             setCurrentUser(data)
@@ -36,6 +36,12 @@ function App() {
         })
     }
 
+    function handleUpdateAvatar(props) {
+        api.setAvatar(props).then((data) => {
+            setCurrentUser(data)
+            closeAllPopup()
+        })
+    }
 
 
     const handleOpenProfile = () => setIsOpenProfile(true)
@@ -70,6 +76,7 @@ function App() {
               handleOpenCardImage={handleOpenCardImage}
           />
             <EditProfilePopup onUpdateUser={handleUpdateUser} onClose={closeAllPopup} isOpened={isOpenProfile} />
+            <EditAvatarPopup onUpdateAvatar={handleUpdateAvatar} onClose={closeAllPopup} isOpened={isOpenAvatar} />
         </CurrentUserContext.Provider>
 
       <Footer />
@@ -109,27 +116,7 @@ function App() {
             </label>
         </PopupWithForm>
 
-        <PopupWithForm
-            closeAllPopup={closeAllPopup}
-            selector={'popup popup_avatar'}
-            heading={'popup-heading popup-heading_type_form'}
-            isOpened={isOpenAvatar}
-            formName={'form form_avatar'}
-            name={'avatar'}
-            title={'Обновить аватар'}
-            submit={'submit-btn_type_form'}
-            innerButtonText={'Сохранить'}>
-            <label className="form__field">
-                <input type="url"
-                       className="form__item form__item_input_link-avatar input"
-                       defaultValue=""
-                       name="avatar"
-                       id="avatarURL-input"
-                       required
-                       placeholder="Ссылка на аватар"/>
-                <span className="form__input-error avatarURL-input-error"></span>
-            </label>
-        </PopupWithForm>
+
 
         <PopupWithForm
             closeAllPopup={closeAllPopup}

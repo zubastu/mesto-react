@@ -43,13 +43,12 @@ const EditProfilePopup = (props) => {
                 <label className="form__field">
                     <input type="text"
                            className="form__item form__item_input_name-profile input"
-                           defaultValue =""
                            name="profileName"
                            id="name-input"
                            minLength="2"
                            maxLength="40"
                            required
-                           value={name}
+                           value={name || ''}
                            onChange={handleChangeName}
                            placeholder="Имя профиля" />
                     <span className="form__input-error name-input-error"></span>
@@ -58,13 +57,12 @@ const EditProfilePopup = (props) => {
                 <label className="form__field">
                     <input type="text"
                            className="form__item form__item_input_job-profile input"
-                           defaultValue =""
                            name="profileJob"
                            id="job-input"
                            minLength="2"
                            maxLength="200"
                            required
-                           value={about}
+                           value={about || ''}
                            onChange={handleChangeAbout}
                            placeholder="Деятельность" />
                     <span className="form__input-error job-input-error"></span>

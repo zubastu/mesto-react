@@ -4,12 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="effd79dd-f8f3-40af-a69e-0bd9e756e0f7" name="Changes" comment="Исправил замечание: исправил отступы Main">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Main.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Profile.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Profile.js" afterDir="false" />
+    <list default="true" id="effd79dd-f8f3-40af-a69e-0bd9e756e0f7" name="Changes" comment="Исправил замечание: Исправил замечание по форматированию">
+      <change beforePath="$PROJECT_DIR$/src/components/PopupDeleteAccept.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/PopupDeleteAccept.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,6 +43,7 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
+    "prettierjs.PrettierConfiguration.Package": "D:\\Projects\\mesto-react\\node_modules\\prettier",
     "settings.editor.selected.configurable": "preferences.pluginManager",
     "vue.rearranger.settings.migration": "true"
   }
@@ -87,7 +84,7 @@
       <workItem from="1651251644204" duration="25000" />
       <workItem from="1651301788618" duration="34933000" />
       <workItem from="1651391388832" duration="5482000" />
-      <workItem from="1651404607474" duration="13113000" />
+      <workItem from="1651404607474" duration="13351000" />
     </task>
     <task id="LOCAL-00001" summary="Создал предварительную структуру">
       <created>1650371838498</created>
@@ -215,7 +212,14 @@
       <option name="project" value="LOCAL" />
       <updated>1651427158324</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="Исправил замечание: Исправил замечание по форматированию">
+      <created>1651427923220</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1651427923220</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -246,6 +250,7 @@
     <MESSAGE value="Исправил замечание: изменил запрос в апи на промис алл" />
     <MESSAGE value="Исправил замечание: исправил отступы в CardsContainer" />
     <MESSAGE value="Исправил замечание: исправил отступы Main" />
-    <option name="LAST_COMMIT_MESSAGE" value="Исправил замечание: исправил отступы Main" />
+    <MESSAGE value="Исправил замечание: Исправил замечание по форматированию" />
+    <option name="LAST_COMMIT_MESSAGE" value="Исправил замечание: Исправил замечание по форматированию" />
   </component>
 </project>

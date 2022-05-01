@@ -6,15 +6,15 @@ const PopupDeleteAccept = (props) => {
     <PopupWithForm
       isUploading={props.isUploading}
       closeAllPopup={props.closeAllPopup}
-      selector={"popup popup_accept-delete-card"}
-      heading={"popup-heading"}
+      selector="popup popup_accept-delete-card"
+      heading="popup-heading"
       isOpened={props.isOpened}
-      formName={"delete-container"}
-      name={"accept-delete-card"}
-      title={"Вы уверены?"}
-      submit={"submit-btn_type_accept"}
+      formName="delete-container"
+      name="accept-delete-card"
+      title="Вы уверены?"
+      submit="submit-btn_type_accept"
       onSubmit={props.onAcceptClick}
-      innerButtonText={"Да"}
+      innerButtonText="Да"
     ></PopupWithForm>
   );
 };

@@ -5,6 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="effd79dd-f8f3-40af-a69e-0bd9e756e0f7" name="Changes" comment="Исправил замечание: добавил деструктуризацию">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/App.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -103,7 +104,7 @@
       <workItem from="1651391388832" duration="5482000" />
       <workItem from="1651404607474" duration="18420000" />
       <workItem from="1651439589074" duration="1594000" />
-      <workItem from="1651763082335" duration="48000" />
+      <workItem from="1651763082335" duration="2909000" />
     </task>
     <task id="LOCAL-00001" summary="Создал предварительную структуру">
       <created>1650371838498</created>
@@ -280,7 +281,28 @@
       <option name="project" value="LOCAL" />
       <updated>1651763097720</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="Исправил замечание: добавил деструктуризацию">
+      <created>1651763137008</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1651763137008</updated>
+    </task>
+    <task id="LOCAL-00027" summary="Исправил замечание: добавил деструктуризацию">
+      <created>1651763232436</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1651763232436</updated>
+    </task>
+    <task id="LOCAL-00028" summary="Исправил замечание: добавил деструктуризацию">
+      <created>1651763245012</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1651763245012</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

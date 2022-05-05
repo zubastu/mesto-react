@@ -5,7 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="effd79dd-f8f3-40af-a69e-0bd9e756e0f7" name="Changes" comment="Исправил замечание: добавил деструктуризацию">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/App.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -104,6 +103,7 @@
       <workItem from="1651391388832" duration="5482000" />
       <workItem from="1651404607474" duration="18420000" />
       <workItem from="1651439589074" duration="1594000" />
+      <workItem from="1651763082335" duration="48000" />
     </task>
     <task id="LOCAL-00001" summary="Создал предварительную структуру">
       <created>1650371838498</created>
@@ -273,7 +273,14 @@
       <option name="project" value="LOCAL" />
       <updated>1651430068326</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="Исправил замечание: добавил деструктуризацию">
+      <created>1651763097720</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1651763097720</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

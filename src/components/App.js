@@ -1,3 +1,4 @@
+Ilya Mhn, [05.05.2022 18:03]
 import React from "react";
 import Footer from "./Footer";
 import Header from "./Header";
@@ -13,31 +14,35 @@ import PopupDeleteAccept from "./PopupDeleteAccept";
 
 function App() {
 
-  const [isOpenProfile, setIsOpenProfile] = React.useState(false);
-  const [isOpenCard, setIsOpenCard] = React.useState(false);
-  const [isOpenCardImage, setIsOpenCardImage] = React.useState(false);
-  const [isOpenAvatar, setIsOpenAvatar] = React.useState(false);
-  const [isOpenAccept, setIsOpenAccept] = React.useState(false);
-  const [card, setCard] = React.useState({});
+  const [state, setState] = React.useState({
+    isOpenProfile: false,
+    isOpenCard: false,
+    isOpenCardImage: false,
+    isOpenAvatar: false,
+    isOpenAccept: false,
+    card: {},
+    selectedCardDelete: {},
+    loadingCards: false,
+    isUploading: false,
+  })
+
   const [currentUser, setCurrentUser] = React.useState({});
   const [cards, setCards] = React.useState([]);
-  const [selectedCardDelete, setSelectedCardDelete] = React.useState({});
-  const [loadingCards, setIsLoadingCards] = React.useState(false);
-  const [isUploading, setIsUploading] = React.useState(false);
+
 
   React.useEffect(() => {
-    setIsLoadingCards(true);
+    setState({...state, loadingCards: true});
     Promise.all([api.getUserInfo(), api.loadAllCards()])
-      .then(([userData, cardsData]) => {
-        setCurrentUser(userData);
-        setCards(cardsData);
-      })
-      .catch((err) => {
-        console.log(err);
-      })
-      .finally(() => {
-        setIsLoadingCards(false);
-      });
+        .then(([userData, cardsData]) => {
+          setCurrentUser(userData);
+          setCards(cardsData);
+        })
+        .catch((err) => {
+          console.log(err);
+        })
+        .finally(() => {
+          setState({...state, loadingCards: false});
+        });
   }, []);
 
   function handleCardLike(card, userId) {
@@ -45,10 +50,9 @@ function App() {
     api
         .changeLikeCardStatus(card._id, isLiked)
         .then((newCard) => {
-          setCards((state) => {
-            console.log("pass!");
-            return state.map((c) => (c._id === card._id ? newCard : c));
-          });
+          setCards((state) =>
+              state.map((c) => (c._id === card._id ? newCard : c))
+          );
         })
         .catch((err) => {
           console.log(err);
@@ -56,144 +60,151 @@ function App() {
   }
 
   function handleDeleteCard(card) {
-    setIsUploading(true);
+    setState({...state, loadingCards: true});
     api
-      .deleteCard(card._id)
-      .then(() => {
-        setCards((state) => state.filter((c) => c._id !== card._id));
-        closeAllPopup();
-      })
-      .catch((err) => {
-        console.log(err);
-      })
-      .finally(() => {
-        setIsUploading(false);
-      });
+        .deleteCard(card._id)
+        .then(() => {
+          setCards((state) => state.filter((c) => c._id !== card._id));
+          setState({...state, isOpenAccept: false})
+        })
+        .catch((err) => {
+          console.log(err);
+        })
+        .finally(() => {
+          setState({...state, loadingCards: false});
+        });
   }
 
   function handleUpdateUser(props) {
-    setIsUploading(true);
+    setState({...state, loadingCards: true});
     api
-      .setUserInfo(props)
-      .then((data) => {
-        setCurrentUser(data);
-        closeAllPopup();
-      })
-      .catch((err) => {
-        console.log(err);
-      })
-      .finally(() => {
-        setIsUploading(false);
-      });
+        .setUserInfo(props)
+        .then((data) => {
+          setCurrentUser(data);
+          closeAllPopup();
+        })
+        .catch((err) => {
+          console.log(err);
+        })
+        .finally(() => {
+          setState({...state, loadingCards: false});
+        });
   }
 
   function handleUpdateAvatar(props) {
-    setIsUploading(true);
+    setState({...state, loadingCards: true});
     api
-      .setAvatar(props)
-      .then((data) => {
-        setCurrentUser(data);
-        closeAllPopup();
-      })
-      .catch((err) => {
-        console.log(err);
-      })
-      .finally(() => {
-        setIsUploading(false);
-      });
+        .setAvatar(props)
+        .then((data) => {
+          setCurrentUser(data);
+          closeAllPopup();
+        })
+        .catch((err) => {
+          console.log(err);
+        })
+        .finally(() => {
+          setState({...state, loadingCards: false});
+        });
+  }
+  const handleOpenProfile = () => setState({...state, isOpenProfile: true});
+  const handleOpenCard = () => setState({...state, isOpenCard: true});
+  const handleOpenAvatar = () => setState({...state, isOpenAvatar: true});
+  const handleOpenCardImage = (card) => {
+    setState({...state,
+      card: card,
+      isOpenCardImage: true
+    });
+  };
+
+  function closeAllPopup() {
+    setState({...state,
+      isOpenProfile: false,
+      isOpenCard: false,
+      isOpenAvatar: false,
+      isOpenAccept: false
+    });
   }
 
-  const handleOpenProfile = () => setIsOpenProfile(true);
-  const handleOpenCard = () => setIsOpenCard(true);
-  const handleOpenAvatar = () => setIsOpenAvatar(true);
-  const handleOpenCardImage = (card) => {
-    setCard(card);
-    setIsOpenCardImage(true);
-  };
-
-  const closeAllPopup = () => {
-    setIsOpenProfile(false);
-    setIsOpenCard(false);
-    setIsOpenCardImage(false);
-    setIsOpenAvatar(false);
-    setIsOpenAccept(false);
-  };
-
+  Ilya Mhn, [05.05.2022 18:03]
   function handleAddPlaceSubmit(cardInfo) {
-    setIsUploading(true);
+    setState({...state, loadingCards: true});
     api
-      .createCard(cardInfo)
-      .then((newCard) => {
-        setCards([newCard, ...cards]);
-        closeAllPopup();
-      })
-      .catch((err) => {
-        console.log(err);
-      })
-      .finally(() => {
-        setIsUploading(false);
-      });
+        .createCard(cardInfo)
+        .then((newCard) => {
+          setState({...state, cards: {...state.cards, newCard}})
+          closeAllPopup();
+        })
+        .catch((err) => {
+          console.log(err);
+        })
+        .finally(() => {
+          setState({...state, loadingCards: false});
+        });
   }
 
   function deleteCardAccept(e) {
     e.preventDefault();
-    handleDeleteCard(selectedCardDelete);
+    handleDeleteCard(state.selectedCardDelete);
   }
 
   function openAcceptDeletePopup(card) {
-    setIsOpenAccept(true);
-    setSelectedCardDelete(card);
+    setState({...state,
+      isOpenAccept: true,
+      selectedCardDelete: card
+    });
   }
 
+  console.log(state)
+
   return (
-    <div className="page page_type_margin">
-      <Header />
-      <CurrentUserContext.Provider value={currentUser}>
-        <Main
-          handleOpenProfile={handleOpenProfile}
-          handleOpenCard={handleOpenCard}
-          handleOpenAvatar={handleOpenAvatar}
-          handleOpenCardImage={handleOpenCardImage}
-          cards={cards}
-          handleCardLike={handleCardLike}
-          openAcceptDeletePopup={openAcceptDeletePopup}
-          isLoadingCards={loadingCards}
-        />
-        <EditProfilePopup
-          isUploading={isUploading}
-          onUpdateUser={handleUpdateUser}
-          onClose={closeAllPopup}
-          isOpened={isOpenProfile}
-        />
-        <EditAvatarPopup
-          isUploading={isUploading}
-          onUpdateAvatar={handleUpdateAvatar}
-          onClose={closeAllPopup}
-          isOpened={isOpenAvatar}
-        />
-        <AddPlacePopup
-          isUploading={isUploading}
-          onAddCard={handleAddPlaceSubmit}
-          onClose={closeAllPopup}
-          isOpened={isOpenCard}
-        />
-        <PopupDeleteAccept
-          isUploading={isUploading}
-          onAcceptClick={deleteCardAccept}
-          onClose={closeAllPopup}
-          isOpened={isOpenAccept}
-        />
-      </CurrentUserContext.Provider>
+      <div className="page page_type_margin">
+        <Header />
+        <CurrentUserContext.Provider value={currentUser}>
+          <Main
+              handleOpenProfile={handleOpenProfile}
+              handleOpenCard={handleOpenCard}
+              handleOpenAvatar={handleOpenAvatar}
+              handleOpenCardImage={handleOpenCardImage}
+              cards={cards}
+              handleCardLike={handleCardLike}
+              openAcceptDeletePopup={openAcceptDeletePopup}
+              isLoadingCards={state.loadingCards}
+          />
+          <EditProfilePopup
+              isUploading={state.isUploading}
+              onUpdateUser={handleUpdateUser}
+              onClose={closeAllPopup}
+              isOpened={state.isOpenProfile}
+          />
+          <EditAvatarPopup
+              isUploading={state.isUploading}
+              onUpdateAvatar={handleUpdateAvatar}
+              onClose={closeAllPopup}
+              isOpened={state.isOpenAvatar}
+          />
+          <AddPlacePopup
+              isUploading={state.isUploading}
+              onAddCard={handleAddPlaceSubmit}
+              onClose={closeAllPopup}
+              isOpened={state.isOpenCard}
+          />
+          <PopupDeleteAccept
+              isUploading={state.isUploading}
+              onAcceptClick={deleteCardAccept}
+              onClose={closeAllPopup}
+              isOpened={state.isOpenAccept}
+          />
+        </CurrentUserContext.Provider>
 
-      <Footer />
+        <Footer />
 
-      <ImagePopup
-        selectedCard={card}
-        closeAllPopup={closeAllPopup}
-        isOpened={isOpenCardImage}
-        selector={"popup popup_photo"}
-      />
-    </div>
+        <ImagePopup
+            selectedCard={state.card}
+            closeAllPopup={closeAllPopup}
+            isOpened={state.isOpenCardImage}
+            selector="popup popup_photo"
+        />
+      </div>
   );
 }
 

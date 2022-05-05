@@ -1,4 +1,3 @@
-Ilya Mhn, [05.05.2022 18:03]
 import React from "react";
 import Footer from "./Footer";
 import Header from "./Header";

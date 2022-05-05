@@ -124,7 +124,6 @@ function App() {
     });
   }
 
-  Ilya Mhn, [05.05.2022 18:03]
   function handleAddPlaceSubmit(cardInfo) {
     setState({...state, loadingCards: true});
     api

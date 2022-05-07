@@ -1,17 +1,19 @@
 import React from "react";
+import Popup from "./Popup";
 
 const ImagePopup = ({ selector, isOpened, closeAllPopup, selectedCard }) => {
   const popupClassName = `${
     isOpened ? `${selector} popup_opened` : `${selector}`
   }`;
+
   return (
-    <div className={popupClassName}>
+    <Popup className={popupClassName} closeAllPopup={closeAllPopup}>
       <div className="popup__photo-container">
         <button
           className="close-btn close-btn_photo "
           type="button"
           onClick={closeAllPopup}
-        ></button>
+        />
 
         <img
           src={selectedCard.link}
@@ -21,7 +23,7 @@ const ImagePopup = ({ selector, isOpened, closeAllPopup, selectedCard }) => {
 
         <p className="popup__photo-paragraph">{selectedCard.name}</p>
       </div>
-    </div>
+    </Popup>
   );
 };
 

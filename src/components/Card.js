@@ -24,7 +24,7 @@ const Card = ({ card, onCardDelete, handleOpenCardImage, onCardLike }) => {
         type="button"
         className={`${deleteButtonClass} button`}
         onClick={() => onCardDelete(card)}
-      ></button>
+      />
       <img
         className="card__picture"
         src={card.link}
@@ -38,7 +38,7 @@ const Card = ({ card, onCardDelete, handleOpenCardImage, onCardLike }) => {
             onClick={() => onCardLike(card, userInfo._id)}
             type="button"
             className={likeButtonClass}
-          ></button>
+          />
           <span
             className={
               card.likes.length > 0

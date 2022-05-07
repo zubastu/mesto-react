@@ -26,7 +26,6 @@ function App() {
     cards: [],
   });
 
-
   React.useEffect(() => {
     dispatch({
       type: "loading-cards",
@@ -225,6 +224,18 @@ function App() {
       },
     });
   }
+  const closeByEscape = (event) => {
+    event.stopPropagation()
+    if (event.key === "Escape") {
+      closeAllPopup();
+    }
+  };
+  React.useEffect(() => {
+    document.addEventListener("keyup", closeByEscape);
+    return () => {
+      document.removeEventListener("keyup", closeByEscape);
+    };
+  }, []);
 
   return (
     <div className="page page_type_margin">
@@ -272,7 +283,7 @@ function App() {
         selectedCard={state.card}
         closeAllPopup={closeAllPopup}
         isOpened={state.isOpenCardImage}
-        selector={"popup popup_photo"}
+        selector="popup popup_photo"
       />
     </div>
   );

@@ -26,15 +26,15 @@ const AddPlacePopup = ({ onAddCard, onClose, isOpened, isUploading }) => {
     <PopupWithForm
       isUploading={isUploading}
       closeAllPopup={onClose}
-      selector={"popup popup_card"}
-      heading={"popup-heading popup-heading_type_form"}
+      selector="popup popup_card"
+      heading="popup-heading popup-heading_type_form"
       isOpened={isOpened}
-      formName={"form form_card"}
-      name={"card"}
-      title={"Новое место"}
-      submit={"submit-btn_type_form"}
+      formName="form form_card"
+      name="card"
+      title="Новое место"
+      submit="submit-btn_type_form"
       onSubmit={handleSubmit}
-      innerButtonText={"Создать"}
+      innerButtonText="Создать"
     >
       <label className="form__field">
         <input

@@ -1,4 +1,5 @@
 import React from "react";
+import Popup from "./Popup";
 
 const PopupWithForm = ({
   innerButtonText,
@@ -19,7 +20,7 @@ const PopupWithForm = ({
   }`;
 
   return (
-    <div className={popupClassName}>
+    <Popup className={popupClassName} closeAllPopup={closeAllPopup}>
       <form
         className={`${formName}`}
         id={`${name}__form`}
@@ -31,7 +32,7 @@ const PopupWithForm = ({
           type="button"
           className="close-btn close-btn_profile"
           onClick={closeAllPopup}
-        ></button>
+        />
 
         <h2 className={heading}>{title}</h2>
 
@@ -45,7 +46,7 @@ const PopupWithForm = ({
           </button>
         </fieldset>
       </form>
-    </div>
+    </Popup>
   );
 };
 

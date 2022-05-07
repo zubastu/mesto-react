@@ -7,6 +7,8 @@ const PopupDeleteAccept = ({
   isUploading,
   onClose,
 }) => {
+
+
   return (
     <PopupWithForm
       isUploading={isUploading}
@@ -20,7 +22,7 @@ const PopupDeleteAccept = ({
       submit="submit-btn_type_accept"
       onSubmit={onAcceptClick}
       innerButtonText="Да"
-    ></PopupWithForm>
+    />
   );
 };
 

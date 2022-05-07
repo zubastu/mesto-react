@@ -5,7 +5,7 @@ const CardsContainer = ({ isLoadingCards, children }) => {
   return (
     <div id="cards-container" className="photo-cards center">
       {isLoadingCards ? (
-        <img className="load-overlay" src={loadOverlay} alt={"загрузка"} />
+        <img className="load-overlay" src={loadOverlay} alt="загрузка" />
       ) : (
         children
       )}

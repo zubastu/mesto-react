@@ -36,7 +36,7 @@ const EditProfilePopup = ({ isOpened, onClose, isUploading, onUpdateUser }) => {
         heading="popup-heading popup-heading_type_form"
         isOpened={isOpened}
         formName="form form_profile"
-        name="profile"
+        name="Profile"
         title="Редактировать профиль"
         submit="submit-btn_type_form"
         innerButtonText="Сохранить"

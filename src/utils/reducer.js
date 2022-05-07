@@ -64,7 +64,7 @@ export default function (state, action) {
     case "open_image":
       return {
         ...state,
-        isOpenCardImage: action.payload.isOpenCardImage,
+        isOpenImage: action.payload.isOpenImage,
         card: action.payload.card,
       };
 
@@ -75,35 +75,6 @@ export default function (state, action) {
         selectedCardDelete: action.payload.selectedCardDelete,
       };
 
-    case "close_profile":
-      return {
-        ...state,
-        isOpenProfile: action.payload,
-      };
-
-    case "close_card":
-      return {
-        ...state,
-        isOpenCard: action.payload,
-      };
-
-    case "close_image":
-      return {
-        ...state,
-        isOpenCardImage: action.payload,
-      };
-
-    case "close_avatar":
-      return {
-        ...state,
-        isOpenAvatar: action.payload,
-      };
-
-    case "close_accept":
-      return {
-        ...state,
-        isOpenAccept: action.payload,
-      };
     case "close_all":
       return {
         ...state,
@@ -112,6 +83,12 @@ export default function (state, action) {
         isOpenCardImage: action.payload,
         isOpenAvatar: action.payload,
         isOpenAccept: action.payload,
+      };
+
+    case "close_popup":
+      return {
+        ...state,
+        [`isOpen${action.payload}`]: false,
       };
 
     default:

@@ -16,7 +16,7 @@ function App() {
   const [state, dispatch] = useReducer(reducer, {
     isOpenProfile: false,
     isOpenCard: false,
-    isOpenCardImage: false,
+    isOpenImage: false,
     isOpenAvatar: false,
     isOpenAccept: false,
     card: {},
@@ -90,7 +90,7 @@ function App() {
           type: "delete_card",
           payload: newCards,
         });
-        closePopup("accept");
+        closePopup("Accept");
       })
       .catch((err) => {
         console.log(err);
@@ -115,7 +115,7 @@ function App() {
           type: "init_user",
           payload: data,
         });
-        closePopup("profile");
+        closePopup("Profile");
       })
       .catch((err) => {
         console.log(err);
@@ -140,7 +140,7 @@ function App() {
           type: "init_user",
           payload: data,
         });
-        closePopup("avatar");
+        closePopup("Avatar");
       })
       .catch((err) => {
         console.log(err);
@@ -173,49 +173,16 @@ function App() {
       type: "open_image",
       payload: {
         card: card,
-        isOpenCardImage: true,
+        isOpenImage: true,
       },
     });
   };
 
   const closePopup = (popupType) => {
-    switch (popupType) {
-      case "profile":
-        dispatch({
-          type: "close_profile",
-          payload: false,
-        });
-        break;
-      case "card":
-        dispatch({
-          type: "close_card",
-          payload: false,
-        });
-        break;
-      case "avatar":
-        dispatch({
-          type: "close_avatar",
-          payload: false,
-        });
-        break;
-      case "image":
-        dispatch({
-          type: "close_image",
-          payload: false,
-        });
-        break;
-      case "accept":
-        dispatch({
-          type: "close_accept",
-          payload: false,
-        });
-        break;
-      case "all":
-        dispatch({
-          type: "close_all",
-          payload: false,
-        });
-    }
+    dispatch({
+      type: "close_popup",
+      payload: popupType,
+    });
   };
 
   const handleAddPlaceSubmit = (cardInfo) => {
@@ -311,9 +278,9 @@ function App() {
       <ImagePopup
         selectedCard={state.card}
         onClose={closePopup}
-        isOpened={state.isOpenCardImage}
+        isOpened={state.isOpenImage}
         selector="popup popup_photo"
-        name="image"
+        name="Image"
       />
     </div>
   );

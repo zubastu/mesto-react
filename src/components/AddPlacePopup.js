@@ -25,7 +25,7 @@ const AddPlacePopup = ({ onAddCard, onClose, isOpened, isUploading }) => {
       heading="popup-heading popup-heading_type_form"
       isOpened={isOpened}
       formName="form form_card"
-      name="card"
+      name="Card"
       title="Новое место"
       submit="submit-btn_type_form"
       onSubmit={handleSubmit}

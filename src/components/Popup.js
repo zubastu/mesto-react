@@ -2,7 +2,6 @@ import React from "react";
 
 const Popup = ({className, closePopup, children, name}) => {
   const closeByOverlayClick = (e) => {
-    console.log(name)
     if (
       e.target.classList.contains("popup_opened") ||
       e.target.classList.contains("close-btn")

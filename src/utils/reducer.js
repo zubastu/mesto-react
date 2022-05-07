@@ -25,12 +25,6 @@ export default function (state, action) {
         currentUser: action.payload,
       };
 
-    case "open_profile":
-      return {
-        ...state,
-        isOpenProfile: action.payload,
-      };
-
     case "update_card":
       return {
         ...state,
@@ -49,46 +43,53 @@ export default function (state, action) {
         cards: action.payload,
       };
 
+    case "open_profile":
+      return {
+        ...state,
+        isOpenProfile: true,
+        openedPopupName: "Profile",
+      };
+
     case "open_card":
       return {
         ...state,
-        isOpenCard: action.payload,
+        isOpenCard: true,
+        openedPopupName: "Card",
       };
 
     case "open_avatar":
       return {
         ...state,
-        isOpenAvatar: action.payload,
+        isOpenAvatar: true,
+        openedPopupName: "Avatar",
       };
 
     case "open_image":
       return {
         ...state,
-        isOpenImage: action.payload.isOpenImage,
+        isOpenImage: true,
         card: action.payload.card,
+        openedPopupName: "Image",
       };
 
     case "open_accept":
       return {
         ...state,
-        isOpenAccept: action.payload.isOpenAccept,
+        isOpenAccept: true,
         selectedCardDelete: action.payload.selectedCardDelete,
-      };
-
-    case "close_all":
-      return {
-        ...state,
-        isOpenProfile: action.payload,
-        isOpenCard: action.payload,
-        isOpenCardImage: action.payload,
-        isOpenAvatar: action.payload,
-        isOpenAccept: action.payload,
+        openedPopupName: "Accept",
       };
 
     case "close_popup":
       return {
         ...state,
         [`isOpen${action.payload}`]: false,
+      };
+
+    case "close_by_escape":
+      return {
+        ...state,
+        [`isOpen${state.openedPopupName}`]: false,
       };
 
     default:

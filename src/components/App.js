@@ -25,6 +25,7 @@ function App() {
     isUploading: false,
     currentUser: {},
     cards: [],
+    openedPopupName: "",
   });
 
   useEffect(() => {
@@ -52,6 +53,7 @@ function App() {
         });
       });
   }, []);
+
   useEffect(() => {
     document.addEventListener("keyup", closeByEscape);
     return () => {
@@ -156,24 +158,20 @@ function App() {
   const handleOpenProfile = () =>
     dispatch({
       type: "open_profile",
-      payload: true,
     });
   const handleOpenCard = () =>
     dispatch({
       type: "open_card",
-      payload: true,
     });
   const handleOpenAvatar = () =>
     dispatch({
       type: "open_avatar",
-      payload: true,
     });
   const handleOpenCardImage = (card) => {
     dispatch({
       type: "open_image",
       payload: {
         card: card,
-        isOpenImage: true,
       },
     });
   };
@@ -198,7 +196,7 @@ function App() {
           type: "delete_card",
           payload: newCards,
         });
-        closePopup("card");
+        closePopup("Card");
       })
       .catch((err) => {
         console.log(err);
@@ -220,16 +218,16 @@ function App() {
     dispatch({
       type: "open_accept",
       payload: {
-        isOpenAccept: true,
         selectedCardDelete: card,
       },
     });
   };
 
   const closeByEscape = (event) => {
-    event.stopPropagation();
     if (event.key === "Escape") {
-      closePopup("all");
+      dispatch({
+        type: "close_by_escape",
+      });
     }
   };
 

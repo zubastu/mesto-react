@@ -6,10 +6,7 @@ export default class Client {
 
   _checkPromise(promise) {
     return promise.then((res) => {
-      if (res.ok) {
-        return res.json();
-      }
-      return Promise.reject(`Ошибка: ${res.status}`);
+      return res.ok ? res.json() : Promise.reject(`Ошибка: ${res.status}`);
     });
   }
 

@@ -1,10 +1,11 @@
-import React from "react";
+import React, { useReducer, useEffect } from "react";
+
+import { CurrentUserContext } from "../contexts/CurrentUserContext";
+import { api } from "../utils/api";
 import Footer from "./Footer";
 import Header from "./Header";
 import Main from "./Main";
 import ImagePopup from "./ImagePopup";
-import { api } from "../utils/api";
-import { CurrentUserContext } from "../contexts/CurrentUserContext";
 import EditProfilePopup from "./EditProfilePopup";
 import EditAvatarPopup from "./EditAvatarPopup";
 import AddPlacePopup from "./AddPlacePopup";
@@ -12,7 +13,7 @@ import PopupDeleteAccept from "./PopupDeleteAccept";
 import reducer from "../utils/reducer";
 
 function App() {
-  const [state, dispatch] = React.useReducer(reducer, {
+  const [state, dispatch] = useReducer(reducer, {
     isOpenProfile: false,
     isOpenCard: false,
     isOpenCardImage: false,
@@ -26,7 +27,7 @@ function App() {
     cards: [],
   });
 
-  React.useEffect(() => {
+  useEffect(() => {
     dispatch({
       type: "loading-cards",
       payload: true,
@@ -51,8 +52,14 @@ function App() {
         });
       });
   }, []);
+  useEffect(() => {
+    document.addEventListener("keyup", closeByEscape);
+    return () => {
+      document.removeEventListener("keyup", closeByEscape);
+    };
+  }, []);
 
-  function handleCardLike(card, userId) {
+  const handleCardLike = (card, userId) => {
     const isLiked = card.likes.some((i) => i._id === userId);
     api
       .changeLikeCardStatus(card._id, isLiked)
@@ -68,9 +75,9 @@ function App() {
       .catch((err) => {
         console.log(err);
       });
-  }
+  };
 
-  function handleDeleteCard(card) {
+  const handleDeleteCard = (card) => {
     dispatch({
       type: "uploading",
       payload: true,
@@ -83,7 +90,7 @@ function App() {
           type: "delete_card",
           payload: newCards,
         });
-        closeAllPopup();
+        closePopup("accept");
       })
       .catch((err) => {
         console.log(err);
@@ -94,21 +101,21 @@ function App() {
           payload: false,
         });
       });
-  }
+  };
 
-  function handleUpdateUser(props) {
+  const handleUpdateUser = (cardInfo) => {
     dispatch({
       type: "uploading",
       payload: true,
     });
     api
-      .setUserInfo(props)
+      .setUserInfo(cardInfo)
       .then((data) => {
         dispatch({
           type: "init_user",
           payload: data,
         });
-        closeAllPopup();
+        closePopup("profile");
       })
       .catch((err) => {
         console.log(err);
@@ -119,21 +126,21 @@ function App() {
           payload: false,
         });
       });
-  }
+  };
 
-  function handleUpdateAvatar(props) {
+  const handleUpdateAvatar = (avatarInfo) => {
     dispatch({
       type: "uploading",
       payload: true,
     });
     api
-      .setAvatar(props)
+      .setAvatar(avatarInfo)
       .then((data) => {
         dispatch({
           type: "init_user",
           payload: data,
         });
-        closeAllPopup();
+        closePopup("avatar");
       })
       .catch((err) => {
         console.log(err);
@@ -144,7 +151,7 @@ function App() {
           payload: false,
         });
       });
-  }
+  };
 
   const handleOpenProfile = () =>
     dispatch({
@@ -171,20 +178,47 @@ function App() {
     });
   };
 
-  const closeAllPopup = () => {
-    dispatch({
-      type: "close_popups",
-      payload: {
-        isOpenProfile: false,
-        isOpenCard: false,
-        isOpenCardImage: false,
-        isOpenAvatar: false,
-        isOpenAccept: false,
-      },
-    });
+  const closePopup = (popupType) => {
+    switch (popupType) {
+      case "profile":
+        dispatch({
+          type: "close_profile",
+          payload: false,
+        });
+        break;
+      case "card":
+        dispatch({
+          type: "close_card",
+          payload: false,
+        });
+        break;
+      case "avatar":
+        dispatch({
+          type: "close_avatar",
+          payload: false,
+        });
+        break;
+      case "image":
+        dispatch({
+          type: "close_image",
+          payload: false,
+        });
+        break;
+      case "accept":
+        dispatch({
+          type: "close_accept",
+          payload: false,
+        });
+        break;
+      case "all":
+        dispatch({
+          type: "close_all",
+          payload: false,
+        });
+    }
   };
 
-  function handleAddPlaceSubmit(cardInfo) {
+  const handleAddPlaceSubmit = (cardInfo) => {
     dispatch({
       type: "uploading",
       payload: true,
@@ -197,7 +231,7 @@ function App() {
           type: "delete_card",
           payload: newCards,
         });
-        closeAllPopup();
+        closePopup("card");
       })
       .catch((err) => {
         console.log(err);
@@ -208,14 +242,14 @@ function App() {
           payload: false,
         });
       });
-  }
+  };
 
-  function deleteCardAccept(e) {
+  const deleteCardAccept = (e) => {
     e.preventDefault();
     handleDeleteCard(state.selectedCardDelete);
-  }
+  };
 
-  function openAcceptDeletePopup(card) {
+  const openAcceptDeletePopup = (card) => {
     dispatch({
       type: "open_accept",
       payload: {
@@ -223,19 +257,14 @@ function App() {
         selectedCardDelete: card,
       },
     });
-  }
+  };
+
   const closeByEscape = (event) => {
-    event.stopPropagation()
+    event.stopPropagation();
     if (event.key === "Escape") {
-      closeAllPopup();
+      closePopup("all");
     }
   };
-  React.useEffect(() => {
-    document.addEventListener("keyup", closeByEscape);
-    return () => {
-      document.removeEventListener("keyup", closeByEscape);
-    };
-  }, []);
 
   return (
     <div className="page page_type_margin">
@@ -254,25 +283,25 @@ function App() {
         <EditProfilePopup
           isUploading={state.isUploading}
           onUpdateUser={handleUpdateUser}
-          onClose={closeAllPopup}
+          onClose={closePopup}
           isOpened={state.isOpenProfile}
         />
         <EditAvatarPopup
           isUploading={state.isUploading}
           onUpdateAvatar={handleUpdateAvatar}
-          onClose={closeAllPopup}
+          onClose={closePopup}
           isOpened={state.isOpenAvatar}
         />
         <AddPlacePopup
           isUploading={state.isUploading}
           onAddCard={handleAddPlaceSubmit}
-          onClose={closeAllPopup}
+          onClose={closePopup}
           isOpened={state.isOpenCard}
         />
         <PopupDeleteAccept
           isUploading={state.isUploading}
           onAcceptClick={deleteCardAccept}
-          onClose={closeAllPopup}
+          onClose={closePopup}
           isOpened={state.isOpenAccept}
         />
       </CurrentUserContext.Provider>
@@ -281,9 +310,10 @@ function App() {
 
       <ImagePopup
         selectedCard={state.card}
-        closeAllPopup={closeAllPopup}
+        onClose={closePopup}
         isOpened={state.isOpenCardImage}
         selector="popup popup_photo"
+        name="image"
       />
     </div>
   );

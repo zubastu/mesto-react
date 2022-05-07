@@ -1,19 +1,20 @@
 import React from "react";
 
-const Popup = (props) => {
+const Popup = ({className, closePopup, children, name}) => {
   const closeByOverlayClick = (e) => {
+    console.log(name)
     if (
       e.target.classList.contains("popup_opened") ||
       e.target.classList.contains("close-btn")
     ) {
-      props.closeAllPopup();
+      closePopup(name);
     }
   };
 
 
   return (
-    <div className={props.className} onClick={closeByOverlayClick}>
-      {props.children}
+    <div className={className} onClick={closeByOverlayClick}>
+      {children}
     </div>
   );
 };

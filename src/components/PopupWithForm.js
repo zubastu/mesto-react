@@ -3,7 +3,7 @@ import Popup from "./Popup";
 
 const PopupWithForm = ({
   innerButtonText,
-  closeAllPopup,
+  closePopup,
   formName,
   heading,
   isOpened,
@@ -20,7 +20,7 @@ const PopupWithForm = ({
   }`;
 
   return (
-    <Popup className={popupClassName} closeAllPopup={closeAllPopup}>
+    <Popup className={popupClassName} closePopup={closePopup} name={name}>
       <form
         className={`${formName}`}
         id={`${name}__form`}
@@ -31,7 +31,7 @@ const PopupWithForm = ({
         <button
           type="button"
           className="close-btn close-btn_profile"
-          onClick={closeAllPopup}
+          onClick={() => closePopup(name)}
         />
 
         <h2 className={heading}>{title}</h2>

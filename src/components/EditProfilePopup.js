@@ -1,28 +1,28 @@
-import React from "react";
-import PopupWithForm from "./PopupWithForm";
+import React, { useState, useContext, useEffect } from "react";
 import { CurrentUserContext } from "../contexts/CurrentUserContext";
+import PopupWithForm from "./PopupWithForm";
 
 const EditProfilePopup = ({ isOpened, onClose, isUploading, onUpdateUser }) => {
-  const [name, setName] = React.useState("");
-  const [about, setAbout] = React.useState("");
-  const userInfo = React.useContext(CurrentUserContext);
-  React.useEffect(() => {
-    setName(userInfo.name);
-    setAbout(userInfo.about);
-  }, [userInfo, isOpened]);
+  const [profile, setProfile] = useState({ name: "", about: "" });
 
-  function handleChangeName(e) {
-    setName(e.target.value);
-  }
-  function handleChangeAbout(e) {
-    setAbout(e.target.value);
-  }
+  const handleChangeInput = (event) => {
+    const { value, name } = event.target;
+    setProfile({ ...profile, [name]: value });
+  };
+
+  const userInfo = useContext(CurrentUserContext);
+  useEffect(() => {
+    setProfile({
+      name: userInfo.name,
+      about: userInfo.about,
+    });
+  }, [userInfo, isOpened]);
 
   function handleSubmit(e) {
     e.preventDefault();
     onUpdateUser({
-      name: name,
-      about: about,
+      name: profile.name,
+      about: profile.about,
     });
   }
 
@@ -31,7 +31,7 @@ const EditProfilePopup = ({ isOpened, onClose, isUploading, onUpdateUser }) => {
       <PopupWithForm
         onSubmit={handleSubmit}
         isUploading={isUploading}
-        closeAllPopup={onClose}
+        closePopup={onClose}
         selector="popup popup_profile"
         heading="popup-heading popup-heading_type_form"
         isOpened={isOpened}
@@ -45,13 +45,13 @@ const EditProfilePopup = ({ isOpened, onClose, isUploading, onUpdateUser }) => {
           <input
             type="text"
             className="form__item form__item_input_name-profile input"
-            name="profileName"
+            name="name"
             id="name-input"
             minLength="2"
             maxLength="40"
             required
-            value={name || ""}
-            onChange={handleChangeName}
+            value={profile.name || ""}
+            onChange={handleChangeInput}
             placeholder="Имя профиля"
           />
           <span className="form__input-error name-input-error"></span>
@@ -61,13 +61,13 @@ const EditProfilePopup = ({ isOpened, onClose, isUploading, onUpdateUser }) => {
           <input
             type="text"
             className="form__item form__item_input_job-profile input"
-            name="profileJob"
+            name="about"
             id="job-input"
             minLength="2"
             maxLength="200"
             required
-            value={about || ""}
-            onChange={handleChangeAbout}
+            value={profile.about || ""}
+            onChange={handleChangeInput}
             placeholder="Деятельность"
           />
           <span className="form__input-error job-input-error"></span>

@@ -12,12 +12,12 @@ const PopupDeleteAccept = ({
   return (
     <PopupWithForm
       isUploading={isUploading}
-      closeAllPopup={onClose}
+      closePopup={onClose}
       selector="popup popup_accept-delete-card"
       heading="popup-heading"
       isOpened={isOpened}
       formName="delete-container"
-      name="accept-delete-card"
+      name="accept"
       title="Вы уверены?"
       submit="submit-btn_type_accept"
       onSubmit={onAcceptClick}

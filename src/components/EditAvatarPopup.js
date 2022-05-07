@@ -18,7 +18,7 @@ const EditAvatarPopup = ({
   return (
     <PopupWithForm
       isUploading={isUploading}
-      closeAllPopup={onClose}
+      closePopup={onClose}
       selector="popup popup_avatar"
       heading="popup-heading popup-heading_type_form"
       isOpened={isOpened}

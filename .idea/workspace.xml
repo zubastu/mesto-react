@@ -4,16 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="effd79dd-f8f3-40af-a69e-0bd9e756e0f7" name="Changes" comment="сделал общий стейт">
-      <change afterPath="$PROJECT_DIR$/src/components/Popup.js" afterDir="false" />
+    <list default="true" id="effd79dd-f8f3-40af-a69e-0bd9e756e0f7" name="Changes" comment="Реализовал отдельный компонент попап, закрытие по клику на оверлей  по нажатию на эскейп">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/AddPlacePopup.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/AddPlacePopup.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Card.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Card.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/CardsContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CardsContainer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/EditAvatarPopup.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/EditAvatarPopup.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/EditProfilePopup.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/EditProfilePopup.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/ImagePopup.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ImagePopup.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Popup.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Popup.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/PopupDeleteAccept.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/PopupDeleteAccept.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/PopupWithForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/PopupWithForm.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/client.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/client.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/reducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/reducer.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -112,7 +114,7 @@
       <workItem from="1651404607474" duration="18420000" />
       <workItem from="1651439589074" duration="1594000" />
       <workItem from="1651851231428" duration="1594000" />
-      <workItem from="1651909404887" duration="8275000" />
+      <workItem from="1651909404887" duration="13259000" />
     </task>
     <task id="LOCAL-00001" summary="Создал предварительную структуру">
       <created>1650371838498</created>
@@ -289,7 +291,14 @@
       <option name="project" value="LOCAL" />
       <updated>1651830071594</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="Реализовал отдельный компонент попап, закрытие по клику на оверлей  по нажатию на эскейп">
+      <created>1651919589818</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1651919589819</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -323,6 +332,7 @@
     <MESSAGE value="Исправил замечание: Исправил замечание по форматированию" />
     <MESSAGE value="Исправил замечание: добавил деструктуризацию" />
     <MESSAGE value="сделал общий стейт" />
-    <option name="LAST_COMMIT_MESSAGE" value="сделал общий стейт" />
+    <MESSAGE value="Реализовал отдельный компонент попап, закрытие по клику на оверлей  по нажатию на эскейп" />
+    <option name="LAST_COMMIT_MESSAGE" value="Реализовал отдельный компонент попап, закрытие по клику на оверлей  по нажатию на эскейп" />
   </component>
 </project>

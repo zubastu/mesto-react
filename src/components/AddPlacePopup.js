@@ -1,31 +1,26 @@
-import React from "react";
+import React, { useState } from "react";
 import PopupWithForm from "./PopupWithForm";
 
 const AddPlacePopup = ({ onAddCard, onClose, isOpened, isUploading }) => {
-  const [cardName, setCardName] = React.useState("");
-  const [cardLink, setCardLink] = React.useState("");
+  const [card, setCard] = useState({ name: "", link: "" });
 
-  function handleChangeCardName(e) {
-    setCardName(e.target.value);
-  }
-  function handleChangeCardLink(e) {
-    setCardLink(e.target.value);
-  }
+  const handleChangeInput = (event) => {
+    const { value, name } = event.target;
+    setCard({ ...card, [name]: value });
+  };
 
   function handleSubmit(e) {
     e.preventDefault();
     onAddCard({
-      name: cardName,
-      link: cardLink,
+      name: card.name,
+      link: card.link,
     });
-    setCardLink("");
-    setCardName("");
   }
 
   return (
     <PopupWithForm
       isUploading={isUploading}
-      closeAllPopup={onClose}
+      closePopup={onClose}
       selector="popup popup_card"
       heading="popup-heading popup-heading_type_form"
       isOpened={isOpened}
@@ -40,8 +35,8 @@ const AddPlacePopup = ({ onAddCard, onClose, isOpened, isUploading }) => {
         <input
           type="text"
           className="form__item form__item_input_name-card input"
-          value={cardName}
-          onChange={handleChangeCardName}
+          value={card.name}
+          onChange={handleChangeInput}
           name="name"
           id="cardName-input"
           minLength="2"
@@ -56,8 +51,8 @@ const AddPlacePopup = ({ onAddCard, onClose, isOpened, isUploading }) => {
         <input
           type="url"
           className="form__item form__item_input_link-card input"
-          value={cardLink}
-          onChange={handleChangeCardLink}
+          value={card.link}
+          onChange={handleChangeInput}
           name="link"
           id="cardUrl-input"
           required

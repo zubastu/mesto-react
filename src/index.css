@@ -4,6 +4,8 @@
 @import url(./blocks/page/_type/page_type_margin.css);
 
 @import url(./blocks/load-overlay/load-overlay.css);
+@import url(blocks/theme-image/theme-image.css);
+
 
 @import url(./blocks/center/center.css);
 @import url(./blocks/main/main.css);

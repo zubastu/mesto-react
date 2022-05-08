@@ -5,8 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="effd79dd-f8f3-40af-a69e-0bd9e756e0f7" name="Changes" comment="Реализовал отдельный компонент попап, закрытие по клику на оверлей  по нажатию на эскейп">
+      <change afterPath="$PROJECT_DIR$/src/blocks/theme-button/_type/theme-button_type_dark.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/blocks/theme-button/_type/theme-button_type_light.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/blocks/theme-button/theme-image.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/blocks/theme-image/theme-image.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/moon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/shine.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/blocks/header/header.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/blocks/header/header.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Header.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,8 +25,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="CSS File" />
         <option value="JavaScript File" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
@@ -106,7 +115,10 @@
       <workItem from="1651439589074" duration="1594000" />
       <workItem from="1651851231428" duration="1594000" />
       <workItem from="1651909404887" duration="23450000" />
-      <workItem from="1651949256846" duration="2058000" />
+      <workItem from="1651949256846" duration="4842000" />
+      <workItem from="1651981635029" duration="301000" />
+      <workItem from="1652032012087" duration="4441000" />
+      <workItem from="1652036911377" duration="168000" />
     </task>
     <task id="LOCAL-00001" summary="Создал предварительную структуру">
       <created>1650371838498</created>
@@ -311,7 +323,14 @@
       <option name="project" value="LOCAL" />
       <updated>1651934759565</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="Реализовал отдельный компонент попап, закрытие по клику на оверлей  по нажатию на эскейп">
+      <created>1651953246869</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1651953246869</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

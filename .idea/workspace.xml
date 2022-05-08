@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="effd79dd-f8f3-40af-a69e-0bd9e756e0f7" name="Changes" comment="Реализовал отдельный компонент попап, закрытие по клику на оверлей  по нажатию на эскейп">
+    <list default="true" id="effd79dd-f8f3-40af-a69e-0bd9e756e0f7" name="Changes" comment="Вынес логику кейсов в редьюсер из Апп">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/App.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/utils/reducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/reducer.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -312,7 +311,21 @@
       <option name="project" value="LOCAL" />
       <updated>1651934759565</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="Вынес логику кейсов в редьюсер из Апп">
+      <created>1652043334981</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1652043334981</updated>
+    </task>
+    <task id="LOCAL-00031" summary="Вынес логику кейсов в редьюсер из Апп">
+      <created>1652043356570</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1652043356570</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -347,6 +360,7 @@
     <MESSAGE value="Исправил замечание: добавил деструктуризацию" />
     <MESSAGE value="сделал общий стейт" />
     <MESSAGE value="Реализовал отдельный компонент попап, закрытие по клику на оверлей  по нажатию на эскейп" />
-    <option name="LAST_COMMIT_MESSAGE" value="Реализовал отдельный компонент попап, закрытие по клику на оверлей  по нажатию на эскейп" />
+    <MESSAGE value="Вынес логику кейсов в редьюсер из Апп" />
+    <option name="LAST_COMMIT_MESSAGE" value="Вынес логику кейсов в редьюсер из Апп" />
   </component>
 </project>

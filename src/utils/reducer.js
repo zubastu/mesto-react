@@ -45,13 +45,13 @@ export default function (state, action) {
       };
 
     case "delete_card":
-      const newCards = state.cards.filter(
-        (c) => c._id !== action.payload.card._id
-      );
-      return {
-        ...state,
-        cards: newCards,
-      };
+        const newCards = state.cards.filter(
+          (c) => c._id !== action.payload.card._id
+        );
+        return {
+          ...state,
+          cards: newCards,
+        };
 
     case "add_card":
       const addNewCard = [action.payload, ...state.cards];

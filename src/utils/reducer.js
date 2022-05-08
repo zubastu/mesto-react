@@ -37,7 +37,7 @@ export default function (state, action) {
 
     case "update_card":
       const updatedCards = state.cards.map((c) =>
-          c._id === action.payload.card._id ? action.payload.newCard : c
+        c._id === action.payload.card._id ? action.payload.newCard : c
       );
       return {
         ...state,
@@ -45,7 +45,9 @@ export default function (state, action) {
       };
 
     case "delete_card":
-      const newCards = state.cards.filter((c) => c._id !== action.payload.card._id);
+      const newCards = state.cards.filter(
+        (c) => c._id !== action.payload.card._id
+      );
       return {
         ...state,
         cards: newCards,

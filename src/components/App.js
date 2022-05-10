@@ -32,8 +32,7 @@ function App() {
 
   useEffect(() => {
     dispatch({
-      type: "loading-cards",
-      payload: true,
+      type: "loading-cards-start",
     });
     Promise.all([api.getUserInfo(), api.loadAllCards()])
       .then(([userData, cardsData]) => {
@@ -50,8 +49,7 @@ function App() {
       })
       .finally(() => {
         dispatch({
-          type: "loading-cards",
-          payload: false,
+          type: "loading-cards-end",
         });
       });
   }, []);
@@ -68,12 +66,12 @@ function App() {
     api
       .changeLikeCardStatus(card._id, isLiked)
       .then((newCard) => {
-        const newCards = state.cards.map((c) =>
-          c._id === card._id ? newCard : c
-        );
         dispatch({
           type: "update_card",
-          payload: newCards,
+          payload: {
+            newCard: newCard,
+            card: card,
+          },
         });
       })
       .catch((err) => {
@@ -83,16 +81,14 @@ function App() {
 
   const handleDeleteCard = (card) => {
     dispatch({
-      type: "uploading",
-      payload: true,
+      type: "uploading-start",
     });
     api
       .deleteCard(card._id)
       .then(() => {
-        const newCards = state.cards.filter((c) => c._id !== card._id);
         dispatch({
           type: "delete_card",
-          payload: newCards,
+          payload: card._id,
         });
         closePopup("Accept");
       })
@@ -101,16 +97,14 @@ function App() {
       })
       .finally(() => {
         dispatch({
-          type: "uploading",
-          payload: false,
+          type: "uploading-end",
         });
       });
   };
 
   const handleUpdateUser = (cardInfo) => {
     dispatch({
-      type: "uploading",
-      payload: true,
+      type: "uploading-start",
     });
     api
       .setUserInfo(cardInfo)
@@ -126,16 +120,14 @@ function App() {
       })
       .finally(() => {
         dispatch({
-          type: "uploading",
-          payload: false,
+          type: "uploading-end",
         });
       });
   };
 
   const handleUpdateAvatar = (avatarInfo) => {
     dispatch({
-      type: "uploading",
-      payload: true,
+      type: "uploading-start",
     });
     api
       .setAvatar(avatarInfo)
@@ -151,8 +143,7 @@ function App() {
       })
       .finally(() => {
         dispatch({
-          type: "uploading",
-          payload: false,
+          type: "uploading-end",
         });
       });
   };
@@ -187,16 +178,14 @@ function App() {
 
   const handleAddPlaceSubmit = (cardInfo) => {
     dispatch({
-      type: "uploading",
-      payload: true,
+      type: "uploading-start",
     });
     api
       .createCard(cardInfo)
       .then((newCard) => {
-        const newCards = [newCard, ...state.cards];
         dispatch({
-          type: "delete_card",
-          payload: newCards,
+          type: "add_card",
+          payload: newCard,
         });
         closePopup("Card");
       })
@@ -205,8 +194,7 @@ function App() {
       })
       .finally(() => {
         dispatch({
-          type: "uploading",
-          payload: false,
+          type: "uploading-end",
         });
       });
   };

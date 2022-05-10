@@ -1,15 +1,25 @@
 export default function (state, action) {
   switch (action.type) {
-    case "loading-cards":
+    case "loading-cards-start":
       return {
         ...state,
-        loadingCards: action.payload,
+        loadingCards: true,
+      };
+    case "loading-cards-end":
+      return {
+        ...state,
+        loadingCards: false,
       };
 
-    case "uploading":
+    case "uploading-start":
       return {
         ...state,
-        isUploading: action.payload,
+        isUploading: true,
+      };
+    case "uploading-end":
+      return {
+        ...state,
+        isUploading: false,
       };
 
     case "init":
@@ -26,21 +36,28 @@ export default function (state, action) {
       };
 
     case "update_card":
+      const updatedCards = state.cards.map((c) =>
+        c._id === action.payload.card._id ? action.payload.newCard : c
+      );
       return {
         ...state,
-        cards: action.payload,
+        cards: updatedCards,
       };
 
     case "delete_card":
-      return {
-        ...state,
-        cards: action.payload,
-      };
+        const newCards = state.cards.filter(
+          (c) => c._id !== action.payload.card._id
+        );
+        return {
+          ...state,
+          cards: newCards,
+        };
 
     case "add_card":
+      const addNewCard = [action.payload, ...state.cards];
       return {
         ...state,
-        cards: action.payload,
+        cards: addNewCard,
       };
 
     case "open_profile":

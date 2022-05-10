@@ -5,8 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="effd79dd-f8f3-40af-a69e-0bd9e756e0f7" name="Changes" comment="Реализовал отдельный компонент попап, закрытие по клику на оверлей  по нажатию на эскейп">
+      <change afterPath="$PROJECT_DIR$/src/blocks/page/_theme/page_theme_dark.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/blocks/page/_theme/page_theme_light.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/InfoToolTip.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Login.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Register.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/blocks/page/page.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/blocks/page/page.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,29 +41,30 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/Projects/mesto-react/src/utils&quot;,
-    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;prettierjs.PrettierConfiguration.Package&quot;: &quot;D:\\Projects\\mesto-react\\node_modules\\prettier&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.sourceCode.XML&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "C:/Users/zubas/Documents/GitHub/mesto-react/src/blocks/root/_theme",
+    "list.type.of.created.stylesheet": "CSS",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "prettierjs.PrettierConfiguration.Package": "D:\\Projects\\mesto-react\\node_modules\\prettier",
+    "settings.editor.selected.configurable": "settings.javascript.prettier",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\zubas\Documents\GitHub\mesto-react\src\blocks\root\_theme" />
+      <recent name="C:\Users\zubas\Documents\GitHub\mesto-react\src\blocks\page\_theme" />
       <recent name="D:\Projects\mesto-react\src\utils" />
       <recent name="D:\Projects\mesto-react\src" />
       <recent name="D:\Projects\mesto-react\src\components" />
-      <recent name="D:\Projects\mesto-react\src\fonts" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\Projects\mesto-react\src\utils" />
@@ -107,6 +117,10 @@
       <workItem from="1651851231428" duration="1594000" />
       <workItem from="1651909404887" duration="23450000" />
       <workItem from="1651949256846" duration="2058000" />
+      <workItem from="1651992714736" duration="2160000" />
+      <workItem from="1652013739206" duration="734000" />
+      <workItem from="1652020983603" duration="593000" />
+      <workItem from="1652170381332" duration="1985000" />
     </task>
     <task id="LOCAL-00001" summary="Создал предварительную структуру">
       <created>1650371838498</created>
@@ -347,5 +361,9 @@
     <MESSAGE value="сделал общий стейт" />
     <MESSAGE value="Реализовал отдельный компонент попап, закрытие по клику на оверлей  по нажатию на эскейп" />
     <option name="LAST_COMMIT_MESSAGE" value="Реализовал отдельный компонент попап, закрытие по клику на оверлей  по нажатию на эскейп" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>

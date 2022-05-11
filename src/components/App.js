@@ -1,4 +1,5 @@
 import React, { useReducer, useEffect } from "react";
+import {Route, Switch, Redirect} from 'react-router-dom'
 
 import { CurrentUserContext } from "../contexts/CurrentUserContext";
 import { api } from "../utils/api";
@@ -26,6 +27,7 @@ function App() {
     currentUser: {},
     cards: [],
     openedPopupName: "",
+    activeThemeLight: false
   });
 
   useEffect(() => {
@@ -219,8 +221,10 @@ function App() {
     }
   };
 
+  const pageClassName = "page page_type_margin page_theme_light"
+
   return (
-    <div className="page page_type_margin">
+    <div className={pageClassName}>
       <Header />
       <CurrentUserContext.Provider value={state.currentUser}>
         <Main
